@@ -10,10 +10,16 @@ export const theme = {
         NEUTRAL_900: "#1C1C1C"
     },
     FONT_SIZE: {
-        XSMALL: 24,
-        SMALL: 32,
-        REGULAR: 36,
-        LARGE: 40,
-        XLARGE: 96
+        XSMALL: 6,
+        SMALL: 10,
+        REGULAR: 14,
+        LARGE: 18,
+        XLARGE: 26,
+        XXLARGE: 50
+    },
+    FONT_WEIGHT: {
+        NORMAL: 300,
+        BOLD: 600,
+        BOLDER: 900
     }
 }

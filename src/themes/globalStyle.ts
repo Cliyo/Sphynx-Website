@@ -8,10 +8,6 @@ export const GlobalStyle = createGlobalStyle`
         text-decoration: none;
     }
 
-    html{
-        font-size: 62.5%;
-    }
-
     body {
         font-family: 'Roboto', sans-serif;
     }
@@ -19,6 +15,7 @@ export const GlobalStyle = createGlobalStyle`
     #root{
         position: relative;
         width: 100%;
-        min-height: 100vh;
+        height: 100vh;
+        background-color: #FAFAFA;
     }
 `

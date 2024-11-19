@@ -23,5 +23,5 @@ export const Title = styled.h1`
 export const InputsContainer = styled.div`
     display: flex;
 
-    
+    gap: 10px;
 `

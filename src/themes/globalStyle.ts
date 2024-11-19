@@ -14,6 +14,7 @@ export const GlobalStyle = createGlobalStyle`
 
     #root{
         position: relative;
+        display: flex;
         width: 100%;
         height: 100vh;
         background-color: #FAFAFA;

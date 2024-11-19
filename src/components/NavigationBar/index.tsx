@@ -1,6 +1,8 @@
-import { Container, LogoContainer, LogoImg, LogoText, MenuOption } from "./styles"
+import { Icon } from "components/Icon"
+import { Container, LogoContainer, LogoImg, LogoText, MenuOption, MenuOptionText } from "./styles"
 
 import Logo from "assets/logo.png"
+import { routes } from "constants/routes"
 
 export const NavigationBar = () => {
     return (
@@ -10,8 +12,14 @@ export const NavigationBar = () => {
                 <LogoText> Sphynx </LogoText>
             </LogoContainer>
 
-            <MenuOption>
-            </MenuOption>
+            {
+                routes.map((route) => (
+                    <MenuOption to={route.path} key={route.name}>
+                        <Icon color={'NEUTRAL_0'} size="20" name={route.iconName} />
+                        <MenuOptionText> {route.name} </MenuOptionText>
+                    </MenuOption>
+                ))
+            }
         </Container>
     )
 }

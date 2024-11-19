@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom"
 import styled, { css } from "styled-components"
 
 export const Container = styled.div`
@@ -35,7 +36,7 @@ export const LogoText = styled.h1`
     `}
 `
 
-export const MenuOption = styled.div`
+export const MenuOption = styled(NavLink)`
     position: relative;
 
     display: flex;
@@ -49,9 +50,21 @@ export const MenuOption = styled.div`
     color: ${({theme}) => theme.COLORS.NEUTRAL_0};
     font-size: ${({theme}) => theme.FONT_SIZE.LARGE}px;
 
+    padding: 15px;
+    gap: 10px;
+
+    cursor: pointer;
+
     transition: 0.5s;
 
     &:hover {
         background-color: ${({theme}) => theme.COLORS.PRIMARY_LIGHT};
     }
+`
+
+export const MenuOptionText = styled.p`
+    ${({theme}) => css`
+        color: ${theme.COLORS.NEUTRAL_0};
+        font-size: ${theme.FONT_SIZE.LARGE}px;
+    `}
 `

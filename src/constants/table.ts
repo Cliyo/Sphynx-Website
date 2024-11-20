@@ -20,3 +20,9 @@ export const accessTableHeaders = [
     "Situação",
     "Ações"
 ]
+
+export const groupsTableHeaders = [
+    "ID",
+    "Nome",
+    "Ações"
+]

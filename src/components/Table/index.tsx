@@ -4,8 +4,9 @@ import { TableProps } from "./types";
 import { CustomerTableData } from "dtos/CustomerDTO";
 import { LocalTableData } from "dtos/LocalDTO";
 import { AccessTableData } from "dtos/AccessDTO";
+import { GroupsTableData } from "dtos/GroupsDTO";
 
-const renderRow = (data: CustomerTableData | LocalTableData | AccessTableData) => {
+const renderRow = (data: CustomerTableData | LocalTableData | AccessTableData | GroupsTableData) => {
     if ('ra' in data) {
         // Renderiza para CustomerTableData
         return (
@@ -28,6 +29,18 @@ const renderRow = (data: CustomerTableData | LocalTableData | AccessTableData) =
                 <BodyItem> {data.customer} </BodyItem>
                 <BodyItem> {data.local} </BodyItem>
                 <BodyItem> {data.situation} </BodyItem>
+                <BodyItem>
+                    <Icon color="NEUTRAL_900" size="16" name="IoPencil" />
+                    <Icon color="NEUTRAL_900" size="16" name="IoTrashOutline" />
+                </BodyItem>
+            </>
+        )
+    }
+    else if('groupName' in data){
+        return (
+            <>
+                <BodyItem> {data.id} </BodyItem>
+                <BodyItem> {data.groupName} </BodyItem>
                 <BodyItem>
                     <Icon color="NEUTRAL_900" size="16" name="IoPencil" />
                     <Icon color="NEUTRAL_900" size="16" name="IoTrashOutline" />

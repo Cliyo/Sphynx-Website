@@ -9,6 +9,8 @@ import { Locals } from "pages/Locals"
 
 import { Access } from "pages/Access"
 
+import { Groups } from "pages/Groups"
+
 export const RouteApp = () => {
     return (
         <BrowserRouter>
@@ -20,6 +22,8 @@ export const RouteApp = () => {
                 <Route path="/locals" element={<Locals />} />
 
                 <Route path="/access" element={<Access />} />
+
+                <Route path="/groups" element={<Groups />} />
             </Routes>
         </BrowserRouter>
     )

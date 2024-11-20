@@ -55,6 +55,14 @@ export const BodyLine = styled.div`
     min-height: 40px;
 
     justify-content: space-between;
+
+    cursor: pointer;
+
+    transition: 0.5s;
+
+    &:hover{
+        background-color: ${({theme}) => theme.COLORS.NEUTRAL_300};
+    }
 `
 
 export const BodyItem = styled.div`

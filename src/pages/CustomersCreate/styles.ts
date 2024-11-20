@@ -7,7 +7,7 @@ export const Container = styled.div`
     flex: 1;
     height: 100%;
 
-    gap: 20px;
+    justify-content: space-between;
 
     padding: 20px;
 `
@@ -27,13 +27,7 @@ export const CustomerForm = styled.form`
 
     grid-template-columns: auto auto;
 
-    position: relative;
-
     gap: 15px;
-
-    >:last-child{
-        grid-column: span 2;
-    }
 `
 
 export const ActionsContainer = styled.div`

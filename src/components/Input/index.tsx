@@ -5,7 +5,7 @@ export const Input = (props: InputProps) => {
     return (
         <Container>
             {props.label && <Label>{props.label}</Label>}
-            <InputCamp placeholder={props.placeholder} />
+            <InputCamp placeholder={props.placeholder} disabled={props.disabled} />
         </Container>
     )
 }

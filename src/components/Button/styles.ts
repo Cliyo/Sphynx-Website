@@ -2,11 +2,12 @@ import styled from "styled-components";
 
 interface ContainerProps {
     width: number
+    height: number
 }
 
 export const Container = styled.button<ContainerProps>`
-    width: ${({width}) => width}px;
-    height: 50px;
+    width: ${({width}) => width === 0 ? `100%` : `${width}px`};
+    height: ${({height}) => height === 0 ? `100%` : `${height}px`};
 
     border-radius: 10px;
     border: 0;

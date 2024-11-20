@@ -1,4 +1,5 @@
 export type ButtonProps = {
     text: string
-    width: number
+    width?: number
+    height?: number
 }

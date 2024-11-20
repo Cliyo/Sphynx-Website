@@ -26,7 +26,7 @@ export const Groups = () => {
       
     return (
         <Container>
-            <Title> Groups </Title>
+            <Title> Grupos </Title>
             <InputsContainer>
                 <Input placeholder="Digite aqui..." />
                 <Button text="Filtrar" width={90}/>

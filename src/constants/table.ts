@@ -5,3 +5,10 @@ export const customersTableHeaders = [
     "Grupo",
     "Ações"
 ]
+
+export const localsTableHeaders = [
+    "Nome",
+    "MAC",
+    "Grupos",
+    "Ações"
+]

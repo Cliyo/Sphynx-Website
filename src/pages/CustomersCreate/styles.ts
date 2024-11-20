@@ -7,6 +7,8 @@ export const Container = styled.div`
     flex: 1;
     height: 100%;
 
+    gap: 20px;
+
     padding: 20px;
 `
 
@@ -18,4 +20,28 @@ export const Title = styled.h1`
     `}
     width: 100%;
     text-align: left;
+`
+
+export const CustomerForm = styled.form`
+    display: grid;
+
+    grid-template-columns: auto auto;
+
+    position: relative;
+
+    gap: 15px;
+
+    >:last-child{
+        grid-column: span 2;
+    }
+`
+
+export const ActionsContainer = styled.div`
+    display: flex;
+
+    width: 100%;
+
+    justify-content: flex-end;
+
+    gap: 20px;
 `

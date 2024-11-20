@@ -1,6 +1,8 @@
 import styled, { css } from "styled-components";
 
 export const Container = styled.div`
+    position: relative;
+    
     display: flex;
     flex-direction: column;
     
@@ -11,8 +13,8 @@ export const Container = styled.div`
 export const Label = styled.p`
     ${({theme}) => css`
         color: ${theme.COLORS.NEUTRAL_900};
-        font-weight: ${theme.FONT_WEIGHT.NORMAL};
-        font-size: ${theme.FONT_SIZE.XSMALL}px;
+        font-weight: ${theme.FONT_WEIGHT.BOLD};
+        font-size: ${theme.FONT_SIZE.SMALL}px;
     `}
 `
 

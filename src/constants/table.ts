@@ -12,3 +12,11 @@ export const localsTableHeaders = [
     "Grupos",
     "Ações"
 ]
+
+export const accessTableHeaders = [
+    "ID",
+    "Usuário",
+    "Local",
+    "Situação",
+    "Ações"
+]

@@ -3,8 +3,9 @@ import { Body, BodyItem, BodyLine, Container, Header, HeaderItem } from "./style
 import { TableProps } from "./types";
 import { CustomerTableData } from "dtos/CustomerDTO";
 import { LocalTableData } from "dtos/LocalDTO";
+import { AccessTableData } from "dtos/AccessDTO";
 
-const renderRow = (data: CustomerTableData | LocalTableData) => {
+const renderRow = (data: CustomerTableData | LocalTableData | AccessTableData) => {
     if ('ra' in data) {
         // Renderiza para CustomerTableData
         return (
@@ -18,8 +19,23 @@ const renderRow = (data: CustomerTableData | LocalTableData) => {
                     <Icon color="NEUTRAL_900" size="16" name="IoTrashOutline" />
                 </BodyItem>
             </>
-        );
-    } else {
+        )
+    }
+    else if('situation' in data){
+        return (
+            <>
+                <BodyItem> {data.id} </BodyItem>
+                <BodyItem> {data.customer} </BodyItem>
+                <BodyItem> {data.local} </BodyItem>
+                <BodyItem> {data.situation} </BodyItem>
+                <BodyItem>
+                    <Icon color="NEUTRAL_900" size="16" name="IoPencil" />
+                    <Icon color="NEUTRAL_900" size="16" name="IoTrashOutline" />
+                </BodyItem>
+            </>
+        )
+    }
+    else {
         // Renderiza para LocalTableData
         return (
             <>

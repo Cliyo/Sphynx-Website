@@ -7,6 +7,8 @@ import { CustomersCreate } from "pages/CustomersCreate"
 
 import { Locals } from "pages/Locals"
 
+import { Access } from "pages/Access"
+
 export const RouteApp = () => {
     return (
         <BrowserRouter>
@@ -16,6 +18,8 @@ export const RouteApp = () => {
                 <Route path="/customers/new" element={<CustomersCreate />} />
 
                 <Route path="/locals" element={<Locals />} />
+
+                <Route path="/access" element={<Access />} />
             </Routes>
         </BrowserRouter>
     )

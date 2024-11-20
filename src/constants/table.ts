@@ -2,7 +2,7 @@ export const customersTableHeaders = [
     "Nome",
     "RA",
     "Tag",
-    "Grupos",
+    "Grupo",
     "Editar",
     "Excluir"
 ]

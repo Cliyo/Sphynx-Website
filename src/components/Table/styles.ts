@@ -13,14 +13,13 @@ export const Header = styled.div`
     display: flex;
     
     flex: 1;
+    min-height: 50px;
 
     justify-content: space-between;
 
     border-radius: 10px 10px 0 0;
 
     background-color: ${({theme}) => theme.COLORS.NEUTRAL_300};
-
-    padding: 15px;
 `
 
 export const HeaderItem = styled.div`
@@ -40,26 +39,22 @@ export const HeaderItem = styled.div`
 
 export const Body = styled.div`
     display: flex;
+    flex-direction: column;
     
     flex: 1;
-
-    justify-content: space-between;
 
     border-radius: 0 0 10px 10px;
 
     background-color: ${({theme}) => theme.COLORS.NEUTRAL_0};
-
-    padding: 15px;
 `
 
 export const BodyLine = styled.div`
     display: flex;
     
     flex: 1;
+    min-height: 40px;
 
     justify-content: space-between;
-
-    padding: 15px;
 `
 
 export const BodyItem = styled.div`

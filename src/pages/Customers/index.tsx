@@ -4,6 +4,7 @@ import { Button } from "components/Button"
 import { Table } from "components/Table"
 import { customersTableHeaders } from "constants/table"
 import { CustomerTableData } from "dtos/CustomerDTO"
+import { NavLink } from "react-router-dom"
 
 export const Customers = () => {
 
@@ -40,7 +41,9 @@ export const Customers = () => {
             <InputsContainer>
                 <Input placeholder="Digite aqui..." />
                 <Button text="Filtrar" width={90} />
-                <Button text="Criar" width={90} />
+                <NavLink to={"/customers/new"}>
+                  <Button text="Criar" width={90} />
+                </NavLink>
             </InputsContainer>
             <Table headers={customersTableHeaders} content={customerTableData}/>
         </Container>

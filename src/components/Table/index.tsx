@@ -20,8 +20,10 @@ export const Table = (props: TableProps) => {
                                 <BodyItem> {customer.ra} </BodyItem>
                                 <BodyItem> {customer.tag} </BodyItem>
                                 <BodyItem> {customer.grupo} </BodyItem>
-                                <BodyItem> <Icon color="NEUTRAL_900" size="16" name="IoPencil" /> </BodyItem>
-                                <BodyItem> <Icon color="NEUTRAL_900" size="16" name="IoTrashOutline" /> </BodyItem>
+                                <BodyItem> 
+                                    <Icon color="NEUTRAL_900" size="16" name="IoPencil" /> 
+                                    <Icon color="NEUTRAL_900" size="16" name="IoTrashOutline" />
+                                </BodyItem>
                             </BodyLine>
                         ))       
                     }

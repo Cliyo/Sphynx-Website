@@ -63,6 +63,10 @@ export const BodyLine = styled.div`
     &:hover{
         background-color: ${({theme}) => theme.COLORS.NEUTRAL_300};
     }
+
+    >:last-child{
+        gap: 20px;
+    }
 `
 
 export const BodyItem = styled.div`

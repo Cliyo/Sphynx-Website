@@ -3,6 +3,5 @@ export const customersTableHeaders = [
     "RA",
     "Tag",
     "Grupo",
-    "Editar",
-    "Excluir"
+    "Ações"
 ]

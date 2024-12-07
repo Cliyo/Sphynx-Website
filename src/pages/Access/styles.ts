@@ -7,7 +7,7 @@ export const Container = styled.div`
     flex: 1;
     height: 100%;
 
-    justify-content: space-between;
+    gap: 15px;
 
     padding: 20px;
 `
@@ -22,20 +22,8 @@ export const Title = styled.h1`
     text-align: left;
 `
 
-export const ContainerForm = styled.form`
-    display: grid;
-
-    grid-template-columns: auto auto;
-
-    gap: 15px;
-`
-
-export const ActionsContainer = styled.div`
+export const InputsContainer = styled.div`
     display: flex;
 
-    width: 100%;
-
-    justify-content: flex-end;
-
-    gap: 20px;
+    gap: 10px;
 `

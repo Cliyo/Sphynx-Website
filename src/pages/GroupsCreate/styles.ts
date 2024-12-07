@@ -25,7 +25,7 @@ export const Title = styled.h1`
 export const ContainerForm = styled.form`
     display: grid;
 
-    grid-template-columns: auto auto;
+    grid-template-columns: auto;
 
     gap: 15px;
 `

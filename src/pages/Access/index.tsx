@@ -1,10 +1,13 @@
-import { Input } from "components/Input"
-import { Container, InputsContainer, Title } from "./styles"
-import { Button } from "components/Button"
-import { Table } from "components/Table"
-import { accessTableHeaders, customersTableHeaders } from "constants/table"
 import { NavLink } from "react-router-dom"
+
+import { accessTableHeaders, customersTableHeaders } from "constants/table"
 import { AccessTableData } from "dtos/AccessDTO"
+
+import { Input } from "components/Input"
+import { Table } from "components/Table"
+import { Button } from "components/Button"
+
+import { Container, InputsContainer, Title } from "./styles"
 
 export const Access = () => {
 

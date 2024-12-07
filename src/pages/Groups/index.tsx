@@ -1,10 +1,14 @@
-import { Input } from "components/Input"
-import { Container, InputsContainer, Title } from "./styles"
-import { Button } from "components/Button"
-import { Table } from "components/Table"
-import { groupsTableHeaders } from "constants/table"
 import { NavLink } from "react-router-dom"
+
+import { groupsTableHeaders } from "constants/table"
+
 import { GroupsTableData } from "dtos/GroupsDTO"
+
+import { Input } from "components/Input"
+import { Table } from "components/Table"
+import { Button } from "components/Button"
+
+import { Container, InputsContainer, Title } from "./styles"
 
 export const Groups = () => {
 

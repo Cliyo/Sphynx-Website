@@ -1,10 +1,14 @@
-import { Input } from "components/Input"
-import { Container, InputsContainer, Title } from "./styles"
-import { Button } from "components/Button"
-import { Table } from "components/Table"
-import { customersTableHeaders } from "constants/table"
-import { CustomerTableData } from "dtos/CustomerDTO"
 import { NavLink } from "react-router-dom"
+
+import { customersTableHeaders } from "constants/table"
+
+import { CustomerTableData } from "dtos/CustomerDTO"
+
+import { Table } from "components/Table"
+import { Input } from "components/Input"
+import { Button } from "components/Button"
+
+import { Container, InputsContainer, Title } from "./styles"
 
 export const Customers = () => {
 

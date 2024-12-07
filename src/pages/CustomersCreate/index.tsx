@@ -1,6 +1,7 @@
 import { Input } from "components/Input"
-import { ActionsContainer, Container, ContainerForm, Title } from "./styles"
 import { Button } from "components/Button"
+
+import { ActionsContainer, Container, ContainerForm, Title } from "./styles"
 
 export const CustomersCreate = () => {
     return (

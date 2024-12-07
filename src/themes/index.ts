@@ -7,7 +7,9 @@ export const theme = {
         NEUTRAL_300: "#D2D2D2",
         NEUTRAL_500: "#3E3E3E",
         NEUTRAL_700: "#232323",
-        NEUTRAL_900: "#1C1C1C"
+        NEUTRAL_900: "#1C1C1C",
+
+        PRIMARY_ERROR: "#FF0000",
     },
     FONT_SIZE: {
         XSMALL: 6,

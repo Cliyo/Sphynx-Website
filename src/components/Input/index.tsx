@@ -1,11 +1,20 @@
-import { Container, InputCamp, Label } from "./styles"
+import { Container, ErrorMessage, InputCamp, Label } from "./styles"
 import { InputProps } from "./types"
 
 export const Input = (props: InputProps) => {
+
+    const {
+        placeholder,
+        disabled,
+        label,
+        errorMessage
+    } = props
+
     return (
         <Container>
-            {props.label && <Label>{props.label}</Label>}
-            <InputCamp placeholder={props.placeholder} disabled={props.disabled} />
+            {label && <Label>{label}</Label>}
+            <InputCamp placeholder={placeholder} disabled={disabled} />
+            {errorMessage && <ErrorMessage> {errorMessage} </ErrorMessage>}
         </Container>
     )
 }

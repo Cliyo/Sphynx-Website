@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next"
 import { Controller, useForm } from "react-hook-form"
 
 import { Input } from "components/Input"
@@ -12,6 +13,8 @@ import { CreateGroupFormData } from "./types"
 import { ActionsContainer, Container, ContainerForm, Title } from "./styles"
 
 export const GroupsCreate = () => {
+
+    const { t } = useTranslation()
 
     const {fetchCreateGroup} = useGroup()
 
@@ -35,17 +38,17 @@ export const GroupsCreate = () => {
                     control={control}
                     name="name"
                     rules={{
-                        required: 'Campo obrigatório',
+                        required: t('inputErrors.required'),
                         pattern: {
                             value: REGEX.onlyString,
-                            message: "Campo deve ser um texto"
+                            message: t('inputErrors.text')
                         }
                     }}
                     render={({field: {onChange, value}}) => (
                         <Input
                             value={value}
                             onChange={onChange}
-                            placeholder="Digite aqui..."
+                            placeholder={t('placeholder.default')}
                             label="Nome"
                             errorMessage={errors.name?.message}
                         />
@@ -53,8 +56,8 @@ export const GroupsCreate = () => {
                 />
             </ContainerForm>
             <ActionsContainer>
-                <Button text="Cancelar" width={120} height={50} />
-                <Button onClick={handleSubmit(onSubmit)} text="Confirmar" width={120} height={50} />
+                <Button text={t('button.cancel')} width={120} height={50} />
+                <Button onClick={handleSubmit(onSubmit)} text={t('button.confirm')} width={120} height={50} />
             </ActionsContainer>
         </Container>
     )

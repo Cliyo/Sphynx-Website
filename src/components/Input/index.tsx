@@ -7,13 +7,14 @@ export const Input = (props: InputProps) => {
         placeholder,
         disabled,
         label,
-        errorMessage
+        errorMessage,
+        value
     } = props
 
     return (
         <Container>
             {label && <Label>{label}</Label>}
-            <InputCamp placeholder={placeholder} disabled={disabled} />
+            <InputCamp placeholder={placeholder} disabled={disabled} value={value} onChange={props.onChange} />
             {errorMessage && <ErrorMessage> {errorMessage} </ErrorMessage>}
         </Container>
     )

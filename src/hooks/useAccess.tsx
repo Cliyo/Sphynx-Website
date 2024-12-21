@@ -1,6 +1,8 @@
-import { AccessTableData } from "dtos/AccessDTO";
 import { useState } from "react";
+
 import { app } from "services/axios";
+
+import { AccessTableData } from "dtos/AccessDTO";
 
 export const useAccess = () => {
     const [ accessTableData, setAccessTableData ] = useState<AccessTableData[]>([]);

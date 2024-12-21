@@ -2,7 +2,6 @@ import { NavLink } from "react-router-dom"
 import { useTranslation } from "react-i18next"
 
 import { accessTableHeaders, customersTableHeaders } from "constants/table"
-import { AccessTableData } from "dtos/AccessDTO"
 
 import { Input } from "components/Input"
 import { Table } from "components/Table"

@@ -36,3 +36,10 @@ export const InputCamp = styled.input`
         outline: none;
     }
 `
+
+export const ErrorMessage = styled.p`
+    ${({theme}) => css`
+        color: ${theme.COLORS.PRIMARY_ERROR};
+        font-size: ${theme.FONT_SIZE.SMALL}px;
+    `}
+`

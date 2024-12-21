@@ -1,13 +1,19 @@
 import { NavLink } from "react-router-dom"
+import { useTranslation } from "react-i18next"
 
 import { Table } from "components/Table"
 import { Input } from "components/Input"
 import { Button } from "components/Button"
+
 import { LocalTableData } from "dtos/LocalDTO"
+
 import { localsTableHeaders } from "constants/table"
+
 import { Container, InputsContainer, Title } from "./styles"
 
 export const Locals = () => {
+
+    const { t } = useTranslation();
 
     const localTableData: LocalTableData[] = [
       {
@@ -34,12 +40,12 @@ export const Locals = () => {
       
     return (
         <Container>
-            <Title> Locais </Title>
+            <Title> {t('title.locals')} </Title>
             <InputsContainer>
-                <Input placeholder="Digite aqui..." />
-                <Button text="Filtrar" width={90} />
+                <Input placeholder={t('placeholder.default')} />
+                <Button text={t('button.filter')} width={90} />
                 <NavLink to={"/locals/new"}>
-                  <Button text="Criar" width={90} />
+                  <Button text={t('button.create')} width={90} />
                 </NavLink>
             </InputsContainer>
             <Table headers={localsTableHeaders} content={localTableData}/>

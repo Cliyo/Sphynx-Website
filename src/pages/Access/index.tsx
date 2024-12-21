@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom"
+import { useTranslation } from "react-i18next"
 
 import { accessTableHeaders, customersTableHeaders } from "constants/table"
 import { AccessTableData } from "dtos/AccessDTO"
@@ -10,6 +11,8 @@ import { Button } from "components/Button"
 import { Container, InputsContainer, Title } from "./styles"
 
 export const Access = () => {
+
+    const { t } = useTranslation()
 
     const accessTableData: AccessTableData[] = [
       {
@@ -40,10 +43,10 @@ export const Access = () => {
       
     return (
         <Container>
-            <Title> Acessos </Title>
+            <Title> {t('title.access')} </Title>
             <InputsContainer>
-                <Input placeholder="Digite aqui..." />
-                <Button text="Filtrar" width={90}/>
+                <Input placeholder={t('placeholder.default')} />
+                <Button text={t('button.filter')} width={90}/>
             </InputsContainer>
             <Table headers={accessTableHeaders} content={accessTableData}/>
         </Container>

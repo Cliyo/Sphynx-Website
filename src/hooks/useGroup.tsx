@@ -12,7 +12,9 @@ export const useGroup = () => {
     const [groupPageData, setGroupPageData] = useState<GroupsTableData[]>([])
 
     const fetchCreateGroup = async (data: CreateGroupFormData) => {
-        app.post('/groups', data)
+        await app.post('/groups', data)
+
+        navigate('/groups')
     }
 
     const fetchGetAllGroups = async () => {

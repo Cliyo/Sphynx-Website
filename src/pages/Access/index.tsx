@@ -1,7 +1,6 @@
-import { NavLink } from "react-router-dom"
 import { useTranslation } from "react-i18next"
 
-import { accessTableHeaders, customersTableHeaders } from "constants/table"
+import { accessTableHeaders } from "constants/table"
 
 import { Input } from "components/Input"
 import { Table } from "components/Table"
@@ -19,7 +18,7 @@ export const Access = () => {
 
     useEffect(() => {
         fetchGetAllAccess()
-    }, [])
+    }, [fetchGetAllAccess])
 
     return (
         <Container>
@@ -28,7 +27,7 @@ export const Access = () => {
                 <Input placeholder={t('placeholder.default')} />
                 <Button text={t('button.filter')} width={90}/>
             </InputsContainer>
-            <Table headers={accessTableHeaders} content={accessTableData}/>
+            <Table headers={accessTableHeaders} content={accessTableData.map(obj => Object.values(obj))}/>
         </Container>
     )
 }

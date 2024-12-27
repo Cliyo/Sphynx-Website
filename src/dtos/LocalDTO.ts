@@ -1,4 +1,4 @@
-export type LocalTableData = {
+export type LocalItemDTO = {
     name: string
     mac: string
     grupos: string[]

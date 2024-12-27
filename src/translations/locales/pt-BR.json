@@ -13,12 +13,18 @@
         "number": "Campo precisa ser um número"
     },
     "placeholder": {
-        "default": "Digite aqui... "
+        "default": "Digite aqui... ",
+        "waiting": "Aguardando solicitação..."
     },
     "button": {
         "create": "Criar",
         "filter": "Filtrar",
         "confirm": "Confirmar",
-        "cancel": "Cancelar"
+        "cancel": "Cancelar",
+        "tag": "Cadastrar sua TAG",
+        "biometry": "Cadastrar biometria"
+    },
+    "tableErrors": {
+        "noData": "Nenhum registro encontrado"
     }
 }

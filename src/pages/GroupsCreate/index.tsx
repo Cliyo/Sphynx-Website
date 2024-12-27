@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next"
+import { useNavigate } from "react-router-dom"
 import { Controller, useForm } from "react-hook-form"
 
 import { Input } from "components/Input"
@@ -16,6 +17,8 @@ export const GroupsCreate = () => {
 
     const { t } = useTranslation()
 
+    const navigate = useNavigate()
+
     const {fetchCreateGroup} = useGroup()
 
     const {control, handleSubmit, formState: {errors}} = useForm<CreateGroupFormData>(
@@ -25,6 +28,10 @@ export const GroupsCreate = () => {
             }
         }
     )
+
+    const handleCancel = () => {
+        navigate('/groups')
+    }
 
     const onSubmit = (data: CreateGroupFormData) => {
         fetchCreateGroup(data)
@@ -56,7 +63,7 @@ export const GroupsCreate = () => {
                 />
             </ContainerForm>
             <ActionsContainer>
-                <Button text={t('button.cancel')} width={120} height={50} />
+                <Button onClick={handleCancel} text={t('button.cancel')} width={120} height={50} />
                 <Button onClick={handleSubmit(onSubmit)} text={t('button.confirm')} width={120} height={50} />
             </ActionsContainer>
         </Container>

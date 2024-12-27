@@ -23,11 +23,10 @@ export const Title = styled.h1`
 `
 
 export const ContainerForm = styled.form`
-    display: grid;
+    display: flex;
+    flex-direction: column;
 
-    grid-template-columns: auto auto;
-
-    gap: 15px;
+    gap: 30px;
 `
 
 export const ActionsContainer = styled.div`
@@ -38,4 +37,13 @@ export const ActionsContainer = styled.div`
     justify-content: flex-end;
 
     gap: 20px;
+`
+
+export const SocketInput = styled.div`
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 10px;
 `

@@ -12,10 +12,13 @@ import { Select } from "components/Select"
 import { useGroup } from "hooks/useGroup"
 import { useEffect } from "react"
 import { useCustomer } from "hooks/useCustomer"
+import { useNavigate } from "react-router-dom"
 
 export const CustomersCreate = () => {
 
     const { t } = useTranslation()
+
+    const navigate = useNavigate()
 
     const { fetchGetAllGroups, groupPageData } = useGroup()
 
@@ -32,6 +35,10 @@ export const CustomersCreate = () => {
             }
         }
     )
+
+    const handleCancel = () => {
+        navigate('/customers')
+    }
 
     const onSubmit = (data: CreateCustomerFormData) => {
         fetchCreateCustomer(data)
@@ -146,7 +153,7 @@ export const CustomersCreate = () => {
                 
             </ContainerForm>
             <ActionsContainer>
-                <Button text={t('button.cancel')} width={120} height={50} />
+                <Button onClick={handleCancel} text={t('button.cancel')} width={120} height={50} />
                 <Button onClick={handleSubmit(onSubmit)} text={t('button.confirm')} width={120} height={50} />
             </ActionsContainer>
         </Container>

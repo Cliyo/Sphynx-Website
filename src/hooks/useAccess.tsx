@@ -8,7 +8,7 @@ export const useAccess = () => {
     const [ accessTableData, setAccessTableData ] = useState<AccessItemDTO[]>([]);
 
     const fetchGetAllAccess = useCallback(async () => {
-        const data = await app.get('/access');
+        const data = await app.get('/accessRegisters');
         setAccessTableData(data.data);
     }, [])
 

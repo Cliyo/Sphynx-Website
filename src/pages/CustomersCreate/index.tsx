@@ -115,13 +115,13 @@ export const CustomersCreate = () => {
                             <Input
                                 value={value}
                                 onChange={onChange}
-                                placeholder="Aguardando solicitação..." 
+                                placeholder={t('placeholder.waiting')} 
                                 label="TAG" disabled={true} 
                                 errorMessage={errors.tag?.message}
                             />
                         )}
                     />
-                    <Button text="Cadastrar sua TAG" />
+                    <Button text={t('button.tag')} />
                 </SocketInput>
                 
                 <SocketInput>
@@ -135,13 +135,13 @@ export const CustomersCreate = () => {
                             <Input
                                 value={value}
                                 onChange={onChange}
-                                placeholder="Aguardando solicitação..." 
+                                placeholder={t('placeholder.waiting')}
                                 label="Biometria" disabled={true} 
                                 errorMessage={errors.biometry?.message}
                             />
                         )}
                     />
-                    <Button text="Cadastrar biometria" />
+                    <Button text={t('button.biometry')} />
                 </SocketInput>
                 
             </ContainerForm>

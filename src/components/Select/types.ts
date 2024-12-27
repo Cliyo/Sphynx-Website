@@ -1,10 +1,8 @@
-export type SelectProps = {
+export type SelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
     label: string
-    options: SelectOption[]
+    options: {
+        label: string
+        value: string
+    }[]
     errorMessage?: string
-}
-
-export type SelectOption = {
-    label: string
-    value: string
 }

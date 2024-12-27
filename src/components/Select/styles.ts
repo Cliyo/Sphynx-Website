@@ -18,7 +18,7 @@ export const Label = styled.p`
     `}
 `
 
-export const SelectInput = styled.input`
+export const SelectInput = styled.select`
     border: 10px;
     border: 0;
 
@@ -42,6 +42,7 @@ export const SelectOption = styled.option`
         color: ${theme.COLORS.NEUTRAL_900};
         font-size: ${theme.FONT_SIZE.SMALL}px;
     `}
+    height: 40px;
 `
 
 export const ErrorMessage = styled.p`

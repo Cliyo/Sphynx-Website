@@ -11,6 +11,7 @@ import { ActionsContainer, Container, ContainerForm, SocketInput, Title } from "
 import { Select } from "components/Select"
 import { useGroup } from "hooks/useGroup"
 import { useEffect } from "react"
+import { useCustomer } from "hooks/useCustomer"
 
 export const CustomersCreate = () => {
 
@@ -18,20 +19,22 @@ export const CustomersCreate = () => {
 
     const { fetchGetAllGroups, groupPageData } = useGroup()
 
+    const { fetchCreateCustomer } = useCustomer()
+
     const { control, handleSubmit, formState: {errors}} = useForm<CreateCustomerFormData>(
         {
             defaultValues: {
                 name: '',
                 ra: '',
-                tag: '',
+                tag: 'teste',
                 group: '',
-                biometry: ''
+                biometry: 'teste'
             }
         }
     )
 
     const onSubmit = (data: CreateCustomerFormData) => {
-        console.log(data)
+        fetchCreateCustomer(data)
     }
 
     useEffect(() => {

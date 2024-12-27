@@ -5,7 +5,7 @@ import { Table } from "components/Table"
 import { Input } from "components/Input"
 import { Button } from "components/Button"
 
-import { LocalTableData } from "dtos/LocalDTO"
+import { LocalItemDTO } from "dtos/LocalDTO"
 
 import { localsTableHeaders } from "constants/table"
 
@@ -15,7 +15,7 @@ export const Locals = () => {
 
     const { t } = useTranslation();
 
-    const localTableData: LocalTableData[] = [
+    const localTableData: LocalItemDTO[] = [
       {
           name: "João Silva",
           mac: "00:1A:2B:3C:4D:5E",

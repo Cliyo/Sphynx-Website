@@ -1,16 +1,16 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 import { app } from "services/axios";
 
-import { AccessTableData } from "dtos/AccessDTO";
+import { AccessItemDTO } from "dtos/AccessDTO";
 
 export const useAccess = () => {
-    const [ accessTableData, setAccessTableData ] = useState<AccessTableData[]>([]);
+    const [ accessTableData, setAccessTableData ] = useState<AccessItemDTO[]>([]);
 
-    const fetchGetAllAccess = async () => {
+    const fetchGetAllAccess = useCallback(async () => {
         const data = await app.get('/access');
         setAccessTableData(data.data);
-    }
+    }, [])
 
     return {
         fetchGetAllAccess,

@@ -1,4 +1,4 @@
-export type AccessTableData = {
+export type AccessItemDTO = {
     id: number
     customer: string
     local: string

@@ -10,6 +10,7 @@ import { CreateCustomerFormData } from "./types"
 import { ActionsContainer, Container, ContainerForm, SocketInput, Title } from "./styles"
 import { Select } from "components/Select"
 import { useGroup } from "hooks/useGroup"
+import { useEffect } from "react"
 
 export const CustomersCreate = () => {
 
@@ -17,7 +18,7 @@ export const CustomersCreate = () => {
 
     const { fetchGetAllGroups, groupPageData } = useGroup()
 
-    const {control, handleSubmit, formState: {errors}} = useForm<CreateCustomerFormData>(
+    const { control, handleSubmit, formState: {errors}} = useForm<CreateCustomerFormData>(
         {
             defaultValues: {
                 name: '',
@@ -32,6 +33,10 @@ export const CustomersCreate = () => {
     const onSubmit = (data: CreateCustomerFormData) => {
         console.log(data)
     }
+
+    useEffect(() => {
+        fetchGetAllGroups()
+    }, [fetchGetAllGroups])
 
     return (
         <Container>
@@ -82,19 +87,16 @@ export const CustomersCreate = () => {
                 <Controller
                     control={control}
                     name="group"
-                    rules={{
-                        required: t('inputErrors.required'),
-                        pattern: {
-                            value: REGEX.onlyString,
-                            message: t('inputErrors.text')
-                        }
-                    }}
-                    render={({field: {onChange, value}}) => (
+                    render={({ field: {onChange} }) => (
                         <Select 
-                            options={groupPageData.map(group => ({label: group.groupName, value: group.id.toString()}))}
-                            onChange={onChange}
+                            options={groupPageData.map(
+                                group => ({
+                                    label: group.name, 
+                                    value: group.id.toString()
+                                }))
+                            }
                             label="Grupo" 
-                            errorMessage={errors.group?.message}
+                            onChange={onChange}
                         />
                     )}
                 />

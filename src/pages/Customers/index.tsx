@@ -20,7 +20,7 @@ export const Customers = () => {
 
   useEffect(() => {
     fetchGetAllCustomers()
-  }, [])
+  }, [fetchGetAllCustomers])
       
   return (
     <Container>

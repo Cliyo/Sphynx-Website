@@ -8,8 +8,8 @@ export const useCustomer = () => {
     const [ customerTableData, setCustomerTableData ] = useState<CustomerTableData[]>([]);
 
     const fetchGetAllCustomers = async () => {
-        const data = await app.get('/customers') as CustomerTableData[];
-        setCustomerTableData(data);
+        const data = await app.get('/customers');
+        setCustomerTableData(data.data);
     }
 
     return {

@@ -16,8 +16,8 @@ export const useGroup = () => {
     }
 
     const fetchGetAllGroups = async () => {
-        const data = await app.get('/groups') as GroupsTableData[]
-        setGroupPageData(data)
+        const data = await app.get('/groups')
+        setGroupPageData(data.data)
     }
 
     return {

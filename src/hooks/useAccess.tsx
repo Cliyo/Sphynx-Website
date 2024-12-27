@@ -8,8 +8,8 @@ export const useAccess = () => {
     const [ accessTableData, setAccessTableData ] = useState<AccessTableData[]>([]);
 
     const fetchGetAllAccess = async () => {
-        const data = await app.get('/access') as AccessTableData[];
-        setAccessTableData(data);
+        const data = await app.get('/access');
+        setAccessTableData(data.data);
     }
 
     return {

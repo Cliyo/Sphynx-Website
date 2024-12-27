@@ -28,7 +28,7 @@ export const Access = () => {
                 <Input placeholder={t('placeholder.default')} />
                 <Button text={t('button.filter')} width={90}/>
             </InputsContainer>
-            <Table headers={accessTableHeaders} content={accessTableData}/>
+            <Table headers={accessTableHeaders} content={accessTableData.map(obj => Object.values(obj))}/>
         </Container>
     )
 }

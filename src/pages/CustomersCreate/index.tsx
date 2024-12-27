@@ -8,10 +8,14 @@ import { REGEX } from "constants/regex"
 import { CreateCustomerFormData } from "./types"
 
 import { ActionsContainer, Container, ContainerForm, SocketInput, Title } from "./styles"
+import { Select } from "components/Select"
+import { useGroup } from "hooks/useGroup"
 
 export const CustomersCreate = () => {
 
     const { t } = useTranslation()
+
+    const { fetchGetAllGroups, groupPageData } = useGroup()
 
     const {control, handleSubmit, formState: {errors}} = useForm<CreateCustomerFormData>(
         {
@@ -86,9 +90,8 @@ export const CustomersCreate = () => {
                         }
                     }}
                     render={({field: {onChange, value}}) => (
-                        <Input 
-                            value={value}
-                            placeholder={t('placeholder.default')} 
+                        <Select 
+                            options={groupPageData.map(group => ({label: group.groupName, value: group.id.toString()}))}
                             onChange={onChange}
                             label="Grupo" 
                             errorMessage={errors.group?.message}

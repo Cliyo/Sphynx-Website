@@ -48,7 +48,7 @@ export const Locals = () => {
                   <Button text={t('button.create')} width={90} />
                 </NavLink>
             </InputsContainer>
-            <Table headers={localsTableHeaders} content={localTableData}/>
+            <Table headers={localsTableHeaders} content={localTableData.map(obj => Object.values(obj))}/>
         </Container>
     )
 }

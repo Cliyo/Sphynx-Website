@@ -32,7 +32,7 @@ export const Customers = () => {
               <Button text={t('button.create')} width={90} />
             </NavLink>
         </InputsContainer>
-        <Table headers={customersTableHeaders} content={customerTableData}/>
+        <Table headers={customersTableHeaders} content={customerTableData.map(obj => Object.values(obj))}/>
     </Container>
   )
 }

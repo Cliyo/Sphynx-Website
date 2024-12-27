@@ -33,7 +33,8 @@ export const Groups = () => {
                 <Button text={t('button.create')} width={90} />
               </NavLink>
           </InputsContainer>
-          <Table headers={groupsTableHeaders} content={groupPageData}/>
+          
+          <Table headers={groupsTableHeaders} content={groupPageData.map(obj => Object.values(obj))} />
       </Container>
   )
 }

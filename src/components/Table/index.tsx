@@ -14,7 +14,8 @@ const renderRow = (data: CustomerTableData | LocalTableData | AccessTableData | 
                 <BodyItem> {data.name} </BodyItem>
                 <BodyItem> {data.ra} </BodyItem>
                 <BodyItem> {data.tag} </BodyItem>
-                <BodyItem> {data.grupo} </BodyItem>
+                <BodyItem> {data.group} </BodyItem>
+                <BodyItem> {!!data.biometry ? 'Cadastrada' : "Não cadastrada"} </BodyItem>
                 <BodyItem>
                     <Icon color="NEUTRAL_900" size="16" name="IoPencil" />
                     <Icon color="NEUTRAL_900" size="16" name="IoTrashOutline" />

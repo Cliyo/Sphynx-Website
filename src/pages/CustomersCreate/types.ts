@@ -1,4 +1,4 @@
-export type CustomerTableData = {
+export type CreateCustomerFormData = {
     name: string
     ra: string
     tag: string

@@ -5,4 +5,5 @@ export type SelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
         value: string
     }[]
     errorMessage?: string
+    onChange?: (value: string) => void;
 }

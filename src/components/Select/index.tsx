@@ -3,12 +3,15 @@ import { SelectProps } from "./types"
 
 export const Select = (props: SelectProps) => {
 
-    const { label, options, errorMessage } = props
+    const { label, options, errorMessage, value, onChange } = props
 
     return (
         <Container>
             <Label>{label}</Label>
-            <SelectInput>
+            <SelectInput value={value} onChange={(e) => onChange?.(e.target.value)}>
+                <SelectOption value="" disabled>
+                    Selecione uma opção
+                </SelectOption>
                 {options.map(option => (
                     <SelectOption key={option.value} value={option.value}>{option.label}</SelectOption>
                 ))}

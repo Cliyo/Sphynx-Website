@@ -1,4 +1,5 @@
 export const customersTableHeaders = [
+    "ID",
     "Nome",
     "RA",
     "Tag",
@@ -7,6 +8,7 @@ export const customersTableHeaders = [
 ]
 
 export const localsTableHeaders = [
+    "ID",
     "Nome",
     "MAC",
     "Grupos",

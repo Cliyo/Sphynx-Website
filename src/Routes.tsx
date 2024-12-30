@@ -19,6 +19,7 @@ export const RouteApp = () => {
             <Routes>
                 <Route path="/customers" element={<Customers />} />
                 <Route path="/customers/new" element={<CustomersCreate />} />
+                <Route path="/customers/edit/:id" element={<CustomersCreate />} />
 
                 <Route path="/locals" element={<Locals />} />
 
@@ -26,6 +27,8 @@ export const RouteApp = () => {
 
                 <Route path="/groups" element={<Groups />} />
                 <Route path="/groups/new" element={<GroupsCreate />} />
+                <Route path="/groups/edit/:id" element={<GroupsCreate />} />
+
             </Routes>
         </BrowserRouter>
     )

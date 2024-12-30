@@ -1,6 +1,7 @@
 import { GroupItemDTO } from "./GroupsDTO"
 
 export type CustomerItemDTO = {
+    id: string
     name: string
     ra: string
     tag: string
@@ -9,6 +10,7 @@ export type CustomerItemDTO = {
 }
 
 export type CustomerTableDataDTO = {
+    id: string
     name: string
     ra: string
     tag: string

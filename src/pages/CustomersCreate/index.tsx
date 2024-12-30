@@ -1,30 +1,31 @@
+import { useCallback, useEffect } from "react"
 import { useTranslation } from "react-i18next"
 import { Controller, useForm } from "react-hook-form"
+import { useNavigate, useParams } from "react-router-dom"
 
 import { Input } from "components/Input"
 import { Button } from "components/Button"
+import { Select } from "components/Select"
 
 import { REGEX } from "constants/regex"
 import { CreateCustomerFormData } from "./types"
 
-import { ActionsContainer, Container, ContainerForm, SocketInput, Title } from "./styles"
-import { Select } from "components/Select"
 import { useGroup } from "hooks/useGroup"
-import { useEffect } from "react"
 import { useCustomer } from "hooks/useCustomer"
-import { useNavigate } from "react-router-dom"
+
+import { ActionsContainer, Container, ContainerForm, SocketInput, Title } from "./styles"
 
 export const CustomersCreate = () => {
 
+    const { id } = useParams()
     const { t } = useTranslation()
-
     const navigate = useNavigate()
-
     const { fetchGetAllGroups, groupPageData } = useGroup()
+    const { fetchCreateCustomer, fetchGetCustomerById, fetchDeleteCustomerById } = useCustomer()
 
-    const { fetchCreateCustomer } = useCustomer()
+    const isEditing = !!id && window.location.pathname.includes('/edit/')
 
-    const { control, handleSubmit, formState: {errors}} = useForm<CreateCustomerFormData>(
+    const { control, handleSubmit, setValue, formState: {errors}} = useForm<CreateCustomerFormData>(
         {
             defaultValues: {
                 name: '',
@@ -36,17 +37,50 @@ export const CustomersCreate = () => {
         }
     )
 
+    const fillCustomerFields = useCallback(async () => {
+        try {
+            const customerData = await fetchGetCustomerById(id as string)
+
+            if(customerData) {
+                const { name, ra, tag, group, biometry } = customerData
+                const groupValue = group.id.toString()
+
+                setValue('name', name)
+                setValue('ra', ra)
+                setValue('tag', tag)
+                setValue('group', groupValue)
+                setValue('biometry', biometry)
+            }
+        } catch (error) {
+            console.error(error)
+        }
+    }, [fetchGetCustomerById, id, setValue])
+
+    const handleDelete = async () => {
+        await fetchDeleteCustomerById(id as string);
+    }
+
     const handleCancel = () => {
         navigate('/customers')
     }
 
-    const onSubmit = (data: CreateCustomerFormData) => {
-        fetchCreateCustomer(data)
+    const onSubmit = async (data: CreateCustomerFormData) => {
+        if(isEditing) {
+            //fetchUpdateCustomer(data)
+        } else {
+            await fetchCreateCustomer(data)
+        }
     }
 
     useEffect(() => {
         fetchGetAllGroups()
     }, [fetchGetAllGroups])
+
+    useEffect(() => {
+        if(isEditing) {
+            fillCustomerFields()
+        }
+    }, [isEditing, id, fillCustomerFields])
 
     return (
         <Container>
@@ -153,6 +187,7 @@ export const CustomersCreate = () => {
                 
             </ContainerForm>
             <ActionsContainer>
+                {isEditing && <Button onClick={handleDelete} text={t('button.delete')} width={120} height={50} /> }
                 <Button onClick={handleCancel} text={t('button.cancel')} width={120} height={50} />
                 <Button onClick={handleSubmit(onSubmit)} text={t('button.confirm')} width={120} height={50} />
             </ActionsContainer>

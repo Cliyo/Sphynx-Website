@@ -24,6 +24,7 @@ export const useCustomer = () => {
 
         const dataFormatted = data.map((customer) => {
             return {
+                id: customer.id,
                 name: customer.name,
                 ra: customer.ra,
                 tag: customer.tag,
@@ -34,9 +35,22 @@ export const useCustomer = () => {
         setCustomerTableData(dataFormatted);
     }, [])
 
+    const fetchGetCustomerById = useCallback(async (id: string) => {
+        const request = await app.get(`/consumers/${id}`) 
+        return request.data as CustomerItemDTO
+    }, [])
+
+    const fetchDeleteCustomerById = async (id: string) => {
+        await app.delete(`/consumers/${id}`)
+
+        navigate('/costumers')
+    }
+
     return {
         fetchGetAllCustomers,
         fetchCreateCustomer,
+        fetchGetCustomerById,
+        fetchDeleteCustomerById,
         customerTableData
     }
 }

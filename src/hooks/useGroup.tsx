@@ -23,9 +23,22 @@ export const useGroup = () => {
         setGroupPageData(data.data)
     }, [])
 
+    const fetchGetGroupById = useCallback(async (id: string) => {
+        const data = await app.get(`/groups/${id}`)
+        return data.data as GroupItemDTO
+    }, [])
+
+    const fetchDeleteGroupById = async (id: string) => {
+        await app.delete(`/groups/${id}`)
+
+        navigate('/groups')
+    }
+
     return {
         fetchCreateGroup,
         fetchGetAllGroups,
+        fetchGetGroupById,
+        fetchDeleteGroupById,
         groupPageData
     }
 }

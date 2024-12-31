@@ -43,7 +43,7 @@ export const useCustomer = () => {
     const fetchDeleteCustomerById = async (id: string) => {
         await app.delete(`/consumers/${id}`)
 
-        navigate('/costumers')
+        navigate('/customers')
     }
 
     return {

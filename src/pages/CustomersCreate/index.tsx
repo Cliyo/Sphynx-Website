@@ -47,8 +47,8 @@ export const CustomersCreate = () => {
 
                 setValue('name', name)
                 setValue('ra', ra)
-                setValue('tag', tag)
                 setValue('group', groupValue)
+                setValue('tag', tag)
                 setValue('biometry', biometry)
             }
         } catch (error) {
@@ -131,7 +131,7 @@ export const CustomersCreate = () => {
                 <Controller
                     control={control}
                     name="group"
-                    render={({ field: {onChange} }) => (
+                    render={({ field: {value, onChange} }) => (
                         <Select 
                             options={groupPageData.map(
                                 group => ({
@@ -140,7 +140,8 @@ export const CustomersCreate = () => {
                                 }))
                             }
                             label="Grupo" 
-                            onChange={onChange}
+                            value={value}
+                            onChange={(selectedOption) => onChange(selectedOption)} 
                         />
                     )}
                 />

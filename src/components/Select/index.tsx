@@ -9,7 +9,7 @@ export const Select = (props: SelectProps) => {
         <Container>
             <Label>{label}</Label>
             <SelectInput value={value} onChange={(e) => onChange?.(e.target.value)}>
-                <SelectOption value="" disabled>
+                <SelectOption value="0">
                     Selecione uma opção
                 </SelectOption>
                 {options.map(option => (

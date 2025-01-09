@@ -67,7 +67,7 @@ export const CustomersCreate = () => {
                             value={value}
                             placeholder={t('placeholder.default')} 
                             onChange={onChange}
-                            label="Nome" 
+                            label={t('inputLabel.name')}
                             errorMessage={errors.name?.message}
                         />
                     )}
@@ -88,7 +88,7 @@ export const CustomersCreate = () => {
                             value={value}
                             placeholder={t('placeholder.default')} 
                             onChange={onChange}
-                            label="RA" 
+                            label={t('inputLabel.ra')}
                             errorMessage={errors.ra?.message}
                         />
                     )}
@@ -105,7 +105,7 @@ export const CustomersCreate = () => {
                                     value: group.id.toString()
                                 }))
                             }
-                            label="Grupo" 
+                            label={t('inputLabel.group')} 
                             onChange={onChange}
                         />
                     )}
@@ -123,7 +123,8 @@ export const CustomersCreate = () => {
                                 value={value}
                                 onChange={onChange}
                                 placeholder={t('placeholder.waiting')} 
-                                label="TAG" disabled={true} 
+                                label={t('inputLabel.tag')}
+                                disabled={true} 
                                 errorMessage={errors.tag?.message}
                             />
                         )}
@@ -143,7 +144,8 @@ export const CustomersCreate = () => {
                                 value={value}
                                 onChange={onChange}
                                 placeholder={t('placeholder.waiting')}
-                                label="Biometria" disabled={true} 
+                                label={t('inputLabel.biometry')}
+                                disabled={true} 
                                 errorMessage={errors.biometry?.message}
                             />
                         )}

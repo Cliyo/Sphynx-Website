@@ -56,7 +56,7 @@ export const GroupsCreate = () => {
                             value={value}
                             onChange={onChange}
                             placeholder={t('placeholder.default')}
-                            label="Nome"
+                            label={t('inputLabel.name')}
                             errorMessage={errors.name?.message}
                         />
                     )}

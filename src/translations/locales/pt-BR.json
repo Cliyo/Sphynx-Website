@@ -5,6 +5,17 @@
         "groups": "Grupos",
         "locals": "Locais"
     },
+    "inputLabel": {
+        "email": "E-mail",
+        "password": "Senha",
+        "name": "Nome",
+        "tag": "TAG",
+        "ra": "RA",
+        "biometry": "Biometria",
+        "group": "Grupo",
+        "local": "Local",
+        "search": "Pesquisar"
+    },
     "inputErrors": {
         "required": "Campo obrigatório",
         "email": "E-mail inválido",
@@ -22,7 +33,8 @@
         "confirm": "Confirmar",
         "cancel": "Cancelar",
         "tag": "Cadastrar sua TAG",
-        "biometry": "Cadastrar biometria"
+        "biometry": "Cadastrar biometria",
+        "login": "Entrar"
     },
     "tableErrors": {
         "noData": "Nenhum registro encontrado"

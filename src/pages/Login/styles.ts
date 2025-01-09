@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Container = styled.div`
     display: flex;
@@ -35,11 +35,19 @@ export const ContainerForm = styled.div`
     align-items: center;
 `
 
+export const FormTitle = styled.h1`
+    ${({theme}) => css`
+        font-size: ${theme.FONT_SIZE.XXLARGE}px;
+        color: ${theme.COLORS.PRIMARY_LIGHT};
+        font-weight: ${theme.FONT_WEIGHT.BOLD};
+    `}
+`
+
 export const Form = styled.form`
     display: flex;
     flex-direction: column;
 
     width: 70%;
 
-    gap: 30px;
+    gap: 35px;
 `

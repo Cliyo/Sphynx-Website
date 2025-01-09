@@ -1,9 +1,9 @@
-import { ModalProps } from "components/Modal/types"
+import { ModalProps } from 'components/Modal/types'
 
 export type AlertContextDataProps = {
-    alert: (props: ModalProps) => void
+  alert: (props: ModalProps) => void
 }
 
 export type AlertContextProviderProps = {
-    children: React.ReactNode
+  children: React.ReactNode
 }

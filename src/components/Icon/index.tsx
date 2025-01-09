@@ -1,7 +1,6 @@
-
 import * as IoIcons from 'react-icons/io5'
 
-import {theme} from 'themes'
+import { theme } from 'themes'
 
 import { IconProps } from './types'
 import { Container } from './styles'

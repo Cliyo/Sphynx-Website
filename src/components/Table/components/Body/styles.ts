@@ -1,48 +1,48 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    
-    flex: 1;
+  display: flex;
+  flex-direction: column;
 
-    border-radius: 0 0 10px 10px;
+  flex: 1;
 
-    background-color: ${({theme}) => theme.COLORS.NEUTRAL_0};
+  border-radius: 0 0 10px 10px;
+
+  background-color: ${({ theme }) => theme.COLORS.NEUTRAL_0};
 `
 
 export const BodyItem = styled.div`
-    display: flex;
+  display: flex;
 
-    flex: 1;
-    height: 100%;
+  flex: 1;
+  height: 100%;
 
-    align-items: center;
-    justify-content: center;
+  align-items: center;
+  justify-content: center;
 
-    font-weight: ${({theme}) => theme.FONT_WEIGHT.BOLD};
-    color: ${({theme}) => theme.COLORS.NEUTRAL_900};
+  font-weight: ${({ theme }) => theme.FONT_WEIGHT.BOLD};
+  color: ${({ theme }) => theme.COLORS.NEUTRAL_900};
 
-    text-align: center;
+  text-align: center;
 `
 
 export const BodyLine = styled.div`
-    display: flex;
-    
-    flex: 1;
-    min-height: 40px;
+  display: flex;
 
-    justify-content: space-between;
+  flex: 1;
+  min-height: 40px;
 
-    cursor: pointer;
+  justify-content: space-between;
 
-    transition: 0.5s;
+  cursor: pointer;
 
-    &:hover{
-        background-color: ${({theme}) => theme.COLORS.NEUTRAL_300};
-    }
+  transition: 0.5s;
 
-    >:last-child{
-        gap: 20px;
-    }
+  &:hover {
+    background-color: ${({ theme }) => theme.COLORS.NEUTRAL_300};
+  }
+
+  > :last-child {
+    gap: 20px;
+  }
 `

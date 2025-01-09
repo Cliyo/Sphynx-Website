@@ -1,9 +1,8 @@
-import { ThemeProvider } from "styled-components"
+import { ThemeProvider } from 'styled-components'
 
-import { NavigationBar } from "components/NavigationBar";
-import { theme } from "themes";
-import { RouteApp } from "Routes";
-import { AlertContextProvider } from "contexts/AlertContext";
+import { theme } from 'themes'
+import { RouteApp } from 'Routes'
+import { AlertContextProvider } from 'contexts/AlertContext'
 
 function App() {
   return (
@@ -12,7 +11,7 @@ function App() {
         <RouteApp />
       </AlertContextProvider>
     </ThemeProvider>
-  );
+  )
 }
 
-export default App;
+export default App

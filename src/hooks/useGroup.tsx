@@ -1,44 +1,43 @@
-import { useCallback, useState } from "react";
-import { useNavigate } from "react-router";
+import { useCallback, useState } from 'react'
+import { useNavigate } from 'react-router'
 
-import { app } from "services/axios";
+import { app } from 'services/axios'
 
-import { GroupItemDTO } from "dtos/GroupsDTO";
-import { CreateGroupFormData } from "pages/GroupsCreate/types";
+import { GroupItemDTO } from 'dtos/GroupsDTO'
+import { CreateGroupFormData } from 'pages/GroupsCreate/types'
 
 export const useGroup = () => {
+  const navigate = useNavigate()
 
-    const navigate = useNavigate()
+  const [groupPageData, setGroupPageData] = useState<GroupItemDTO[]>([])
 
-    const [groupPageData, setGroupPageData] = useState<GroupItemDTO[]>([])
+  const fetchCreateGroup = async (data: CreateGroupFormData) => {
+    await app.post('/groups', data)
 
-    const fetchCreateGroup = async (data: CreateGroupFormData) => {
-        await app.post('/groups', data)
+    navigate('/groups')
+  }
 
-        navigate('/groups')
-    }
+  const fetchGetAllGroups = useCallback(async () => {
+    const data = await app.get('/groups')
+    setGroupPageData(data.data)
+  }, [])
 
-    const fetchGetAllGroups = useCallback(async () => {
-        const data = await app.get('/groups')
-        setGroupPageData(data.data)
-    }, [])
+  const fetchGetGroupById = useCallback(async (id: string) => {
+    const data = await app.get(`/groups/${id}`)
+    return data.data as GroupItemDTO
+  }, [])
 
-    const fetchGetGroupById = useCallback(async (id: string) => {
-        const data = await app.get(`/groups/${id}`)
-        return data.data as GroupItemDTO
-    }, [])
+  const fetchDeleteGroupById = async (id: string) => {
+    await app.delete(`/groups/${id}`)
 
-    const fetchDeleteGroupById = async (id: string) => {
-        await app.delete(`/groups/${id}`)
+    navigate('/groups')
+  }
 
-        navigate('/groups')
-    }
-
-    return {
-        fetchCreateGroup,
-        fetchGetAllGroups,
-        fetchGetGroupById,
-        fetchDeleteGroupById,
-        groupPageData
-    }
+  return {
+    fetchCreateGroup,
+    fetchGetAllGroups,
+    fetchGetGroupById,
+    fetchDeleteGroupById,
+    groupPageData,
+  }
 }

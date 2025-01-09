@@ -1,3 +1,4 @@
+import { Icon } from "components/Icon"
 import { Container, ErrorMessage, InputCamp, Label } from "./styles"
 import { InputProps } from "./types"
 
@@ -14,8 +15,8 @@ export const Input = (props: InputProps) => {
     return (
         <Container>
             {label && <Label>{label}</Label>}
-            <InputCamp placeholder={placeholder} disabled={disabled} value={value} onChange={props.onChange} />
-            {errorMessage && <ErrorMessage> {errorMessage} </ErrorMessage>}
+            <InputCamp placeholder={placeholder} disabled={disabled} value={value} onChange={props.onChange} hasError={!!errorMessage} />
+            {errorMessage && <ErrorMessage> <Icon color="PRIMARY_ERROR" name="IoAlertCircleSharp" size="10" /> {errorMessage} </ErrorMessage>}
         </Container>
     )
 }

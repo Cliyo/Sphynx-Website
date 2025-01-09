@@ -11,10 +11,13 @@ import { REGEX } from "constants/regex"
 import Icon from "assets/logo.png"
 
 import { Banner, Container, ContainerForm, Form, Image } from "./styles"
+import { useAuth } from "hooks/useAuth"
 
 export const Login = () => {
 
     const { t } = useTranslation()
+
+    const { fetchLogin } = useAuth()
 
     const {control, handleSubmit, formState: {errors} } = useForm<LoginFormData>({
         defaultValues: {
@@ -23,8 +26,9 @@ export const Login = () => {
         }
     })
 
-    const onSubmit = (data: LoginFormData) => {
+    const onSubmit = async (data: LoginFormData) => {
         console.log("enviou: ", data)
+        await fetchLogin(data)
     }
 
     return (

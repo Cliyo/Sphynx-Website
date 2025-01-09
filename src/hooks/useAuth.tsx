@@ -8,7 +8,7 @@ export const useAuth = () => {
     const navigate = useNavigate()
 
     const fetchLogin = async (data: LoginFormData) => {
-        await app.post('/auth/login', data)
+        await app.post('/login', data)
 
         navigate('/dashboard')
     }

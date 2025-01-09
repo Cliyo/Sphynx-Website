@@ -14,6 +14,7 @@ import { useGroup } from "hooks/useGroup"
 import { useCustomer } from "hooks/useCustomer"
 
 import { ActionsContainer, Container, ContainerForm, SocketInput, Title } from "./styles"
+import { useAlert } from "hooks/useAlert"
 
 export const CustomersCreate = () => {
 
@@ -22,6 +23,8 @@ export const CustomersCreate = () => {
     const navigate = useNavigate()
     const { fetchGetAllGroups, groupPageData } = useGroup()
     const { fetchCreateCustomer, fetchGetCustomerById, fetchDeleteCustomerById } = useCustomer()
+
+    const { alert } = useAlert()
 
     const isEditing = !!id && window.location.pathname.includes('/edit/')
 
@@ -56,7 +59,16 @@ export const CustomersCreate = () => {
         }
     }, [fetchGetCustomerById, id, setValue])
 
+
     const handleDelete = async () => {
+        alert({
+            title: "Deletar Usuário",
+            message: "Deseja realmente deletar este usuário?",
+            onConfirm: onConfirmDelete
+        })
+    }
+
+    const onConfirmDelete = async () => {
         await fetchDeleteCustomerById(id as string);
     }
 

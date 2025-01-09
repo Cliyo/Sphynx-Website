@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next"
-import { useCallback, useEffect } from "react"
+import { useCallback, useContext, useEffect, useState } from "react"
 import { Controller, useForm } from "react-hook-form"
 import { useNavigate, useParams } from "react-router-dom"
 
@@ -13,14 +13,17 @@ import { useGroup } from "hooks/useGroup"
 import { CreateGroupFormData } from "./types"
 
 import { ActionsContainer, Container, ContainerForm, Title } from "./styles"
+import { useAlert } from "hooks/useAlert"
 
 export const GroupsCreate = () => {
-
     const { id } = useParams()
+
     const { t } = useTranslation()
     const navigate = useNavigate()
     const { fetchCreateGroup, fetchGetGroupById, fetchDeleteGroupById } = useGroup()
 
+    const { alert } = useAlert()
+    
     const isEditing = !!id && window.location.pathname.includes('/edit/')
 
     const {control, handleSubmit, setValue, formState: {errors}} = useForm<CreateGroupFormData>(
@@ -44,7 +47,17 @@ export const GroupsCreate = () => {
     }, [fetchGetGroupById, id, setValue])
 
     const handleDelete = async () => {
-        await fetchDeleteGroupById(id as string);
+        alert(
+            {
+                onConfirm: onConfirmDelete,
+                title: "Deletar Grupo",
+                message: "Deseja realmente deletar este grupo?",
+            }
+        )
+    }
+
+    const onConfirmDelete = async () => {
+        await fetchDeleteGroupById(id as string)
     }
 
     const handleCancel = () => {

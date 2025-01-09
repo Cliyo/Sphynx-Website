@@ -21,7 +21,8 @@
         "email": "E-mail inválido",
         "password": "Senha inválida",
         "text": "Campo precisa ser um texto",
-        "number": "Campo precisa ser um número"
+        "number": "Campo precisa ser um número",
+        "minLength": "A senha deve ter pelo menos {{length}} caracteres."
     },
     "placeholder": {
         "default": "Digite aqui... ",

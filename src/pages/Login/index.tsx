@@ -1,6 +1,8 @@
 import { useTranslation } from "react-i18next"
 import { Controller, useForm } from "react-hook-form"
 
+import { useAuth } from "hooks/useAuth"
+
 import { Button } from "components/Button"
 import { Input } from "components/Input"
 
@@ -11,7 +13,6 @@ import { REGEX } from "constants/regex"
 import Icon from "assets/logo.png"
 
 import { Banner, Container, ContainerForm, Form, FormTitle, Image } from "./styles"
-import { useAuth } from "hooks/useAuth"
 
 export const Login = () => {
 
@@ -66,7 +67,7 @@ export const Login = () => {
                             required: t('inputErrors.required'),
                             minLength: {
                                 value: 2,
-                                message: t('inputErrors.minLength', { length: 2 }) // Mensagem de erro personalizada
+                                message: t('inputErrors.minLength', { length: 2 })
                             }
                         }}
                         render={({field: {onChange, value}}) => (

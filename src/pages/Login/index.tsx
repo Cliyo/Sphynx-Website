@@ -10,7 +10,7 @@ import { REGEX } from "constants/regex"
 
 import Icon from "assets/logo.png"
 
-import { Banner, Container, ContainerForm, Form, Image } from "./styles"
+import { Banner, Container, ContainerForm, Form, FormTitle, Image } from "./styles"
 import { useAuth } from "hooks/useAuth"
 
 export const Login = () => {
@@ -38,14 +38,15 @@ export const Login = () => {
             </Banner>
             <ContainerForm>
                 <Form>
+                    <FormTitle> Login </FormTitle>
                     <Controller
                         control={control}
                         name="email"
                         rules={{
                             required: t('inputErrors.required'),
                             pattern: {
-                                value: REGEX.onlyString,
-                                message: t('inputErrors.text')
+                                value: REGEX.email,
+                                message: t('inputErrors.email')
                             }
                         }}
                         render={({field: {onChange, value}}) => (
@@ -62,7 +63,11 @@ export const Login = () => {
                         control={control}
                         name="password"
                         rules={{
-                            required: t('inputErrors.required')
+                            required: t('inputErrors.required'),
+                            minLength: {
+                                value: 2,
+                                message: t('inputErrors.minLength', { length: 2 }) // Mensagem de erro personalizada
+                            }
                         }}
                         render={({field: {onChange, value}}) => (
                             <Input

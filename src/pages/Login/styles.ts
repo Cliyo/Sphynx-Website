@@ -13,7 +13,7 @@ export const Banner = styled.div`
     display: flex;
 
     height: 100%;
-    width: 60%;
+    width: 50%;
 
     justify-content: center;
     align-items: center;
@@ -22,8 +22,7 @@ export const Banner = styled.div`
 `
 
 export const Image = styled.img`
-    width: 100%;
-    height: 100%;
+    width: 60%;
 `
 
 export const ContainerForm = styled.div`

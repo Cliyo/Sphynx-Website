@@ -8,6 +8,8 @@ import { LoginFormData } from "./types"
 
 import { REGEX } from "constants/regex"
 
+import Icon from "assets/logo.png"
+
 import { Banner, Container, ContainerForm, Form, Image } from "./styles"
 
 export const Login = () => {
@@ -28,7 +30,7 @@ export const Login = () => {
     return (
         <Container>
             <Banner>
-                <Image />
+                <Image src={Icon} />
             </Banner>
             <ContainerForm>
                 <Form>

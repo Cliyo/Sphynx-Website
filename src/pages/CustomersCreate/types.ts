@@ -1,7 +1,7 @@
 export type CreateCustomerFormData = {
-    name: string
-    ra: string
-    tag: string
-    group: string
-    biometry: string
+  name: string
+  ra: string
+  tag: string
+  group: string
+  biometry: string
 }

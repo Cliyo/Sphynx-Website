@@ -1,58 +1,56 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components'
 
 type InputCampProps = {
-    hasError: boolean
+  hasError: boolean
 }
 
 export const Container = styled.div`
-    position: relative;
-    
-    display: flex;
-    flex-direction: column;
-    
-    width: 100%;
-    height: 50px;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 50px;
 `
 
 export const Label = styled.p`
-    ${({theme}) => css`
-        color: ${theme.COLORS.NEUTRAL_900};
-        font-weight: ${theme.FONT_WEIGHT.BOLD};
-        font-size: ${theme.FONT_SIZE.SMALL}px;
-    `}
+  ${({ theme }) => css`
+    color: ${theme.COLORS.NEUTRAL_900};
+    font-weight: ${theme.FONT_WEIGHT.BOLD};
+    font-size: ${theme.FONT_SIZE.SMALL}px;
+  `}
 `
 
 export const InputCamp = styled.input<InputCampProps>`
-    border: 10px;
-    border: 0;
+  width: 100%;
+  height: 100%;
 
-    width: 100%;
-    height: 100%;
+  background-color: ${({ theme }) => theme.COLORS.NEUTRAL_200};
 
-    background-color: ${({theme}) => theme.COLORS.NEUTRAL_200};
+  padding: 15px;
 
-    padding: 15px;
+  border-radius: 10px;
+  border: ${({ hasError, theme }) =>
+    hasError ? `1px solid ${theme.COLORS.PRIMARY_ERROR}` : `0px`};
 
-    border-radius: 10px;
-    border: ${({hasError, theme}) => hasError ? `1px solid ${theme.COLORS.PRIMARY_ERROR}` : `0px`};
-
-    &:focus-visible{
-        outline: none;
-    }
+  &:focus-visible {
+    outline: none;
+  }
 `
 
 export const ErrorMessage = styled.div`
-    display: flex;
+  display: flex;
 
-    align-items: center;
-    justify-content: flex-start;
+  align-items: center;
+  justify-content: flex-start;
 
-    margin-top: 5px;
+  margin-top: 5px;
 
-    gap: 5px;
-    
-    ${({theme}) => css`
-        color: ${theme.COLORS.PRIMARY_ERROR};
-        font-size: ${theme.FONT_SIZE.SMALL}px;
-    `}
+  gap: 5px;
+
+  ${({ theme }) => css`
+    color: ${theme.COLORS.PRIMARY_ERROR};
+    font-size: ${theme.FONT_SIZE.SMALL}px;
+  `}
 `

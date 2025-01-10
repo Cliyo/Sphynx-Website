@@ -1,3 +1,3 @@
 export type BodyProps = {
-    bodyLines: string[][]
+  bodyLines: string[][]
 }

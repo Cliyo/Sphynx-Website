@@ -1,3 +1,3 @@
 export type CreateGroupFormData = {
-    name: string
+  name: string
 }

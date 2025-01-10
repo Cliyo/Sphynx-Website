@@ -1,29 +1,29 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components'
 
 export const Container = styled.div`
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    flex: 1;
-    height: 100%;
+  flex: 1;
+  height: 100%;
 
-    gap: 15px;
+  gap: 15px;
 
-    padding: 20px;
+  padding: 20px;
 `
 
 export const Title = styled.h1`
-    ${({theme}) => css`
-        color: ${theme.COLORS.NEUTRAL_900};
-        font-weight: ${theme.FONT_WEIGHT.BOLDER};
-        font-size: ${theme.FONT_SIZE.XXLARGE}px;
-    `}
-    width: 100%;
-    text-align: left;
+  ${({ theme }) => css`
+    color: ${theme.COLORS.NEUTRAL_900};
+    font-weight: ${theme.FONT_WEIGHT.BOLDER};
+    font-size: ${theme.FONT_SIZE.XXLARGE}px;
+  `}
+  width: 100%;
+  text-align: left;
 `
 
 export const InputsContainer = styled.div`
-    display: flex;
+  display: flex;
 
-    gap: 10px;
+  gap: 10px;
 `

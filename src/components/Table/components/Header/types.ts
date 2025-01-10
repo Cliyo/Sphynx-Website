@@ -1,3 +1,3 @@
 export type HeaderProps = {
-    headers: string[]
+  headers: string[]
 }

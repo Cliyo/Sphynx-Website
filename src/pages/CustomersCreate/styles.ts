@@ -1,49 +1,49 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components'
 
 export const Container = styled.div`
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    flex: 1;
-    height: 100%;
+  flex: 1;
+  height: 100%;
 
-    justify-content: space-between;
+  justify-content: space-between;
 
-    padding: 20px;
+  padding: 20px;
 `
 
 export const Title = styled.h1`
-    ${({theme}) => css`
-        color: ${theme.COLORS.NEUTRAL_900};
-        font-weight: ${theme.FONT_WEIGHT.BOLDER};
-        font-size: ${theme.FONT_SIZE.XXLARGE}px;
-    `}
-    width: 100%;
-    text-align: left;
+  ${({ theme }) => css`
+    color: ${theme.COLORS.NEUTRAL_900};
+    font-weight: ${theme.FONT_WEIGHT.BOLDER};
+    font-size: ${theme.FONT_SIZE.XXLARGE}px;
+  `}
+  width: 100%;
+  text-align: left;
 `
 
 export const ContainerForm = styled.form`
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    gap: 30px;
+  gap: 30px;
 `
 
 export const ActionsContainer = styled.div`
-    display: flex;
+  display: flex;
 
-    width: 100%;
+  width: 100%;
 
-    justify-content: flex-end;
+  justify-content: flex-end;
 
-    gap: 20px;
+  gap: 20px;
 `
 
 export const SocketInput = styled.div`
-    display: flex;
+  display: flex;
 
-    justify-content: space-between;
-    align-items: center;
+  justify-content: space-between;
+  align-items: center;
 
-    gap: 10px;
+  gap: 10px;
 `

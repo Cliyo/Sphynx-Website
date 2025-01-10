@@ -1,19 +1,19 @@
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from 'react-router-dom'
 
-import { app } from "services/axios"
+import { app } from 'services/axios'
 
-import { LoginFormData } from "pages/Login/types"
+import { LoginFormData } from 'pages/Login/types'
 
 export const useAuth = () => {
-    const navigate = useNavigate()
+  const navigate = useNavigate()
 
-    const fetchLogin = async (data: LoginFormData) => {
-        await app.post('/login', data)
+  const fetchLogin = async (data: LoginFormData) => {
+    await app.post('/login', data)
 
-        navigate('/dashboard')
-    }
+    navigate('/dashboard')
+  }
 
-    return {
-        fetchLogin
-    }
+  return {
+    fetchLogin,
+  }
 }

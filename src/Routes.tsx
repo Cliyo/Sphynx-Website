@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
 
 import { NavigationBar } from "components/NavigationBar"
 
@@ -13,15 +13,25 @@ import { Access } from "pages/Access"
 
 import { Groups } from "pages/Groups"
 import { GroupsCreate } from "pages/GroupsCreate"
+import { useAuthentication } from "context/AuthContext"
+import { PrivateRoute } from "components/PrivateRoute"
 
 export const RouteApp = () => {
+
+    const { user } = useAuthentication()
+
+    const { isAuthenticated } = user
+
     return (
         <BrowserRouter>
-            
+            { isAuthenticated && <NavigationBar /> }
             <Routes>
-                <Route path="/auth/login" element={<Login />} />
 
-                <Route path="/customers" element={<Customers />} />
+                <Route path="/" element={<Navigate to={isAuthenticated ? "/customers" : "/auth/login"} />} />
+
+                <Route path="/auth/login" element={isAuthenticated ? <Navigate to={"/customers"} replace /> : <Login />} />
+
+                <Route path="/customers" element={<PrivateRoute> <Customers /> </PrivateRoute>} />
                 <Route path="/customers/new" element={<CustomersCreate />} />
 
                 <Route path="/locals" element={<Locals />} />
@@ -30,6 +40,8 @@ export const RouteApp = () => {
 
                 <Route path="/groups" element={<Groups />} />
                 <Route path="/groups/new" element={<GroupsCreate />} />
+                
+                
             </Routes>
         </BrowserRouter>
     )

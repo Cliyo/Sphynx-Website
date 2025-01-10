@@ -1,70 +1,70 @@
-import { NavLink } from "react-router-dom"
-import styled, { css } from "styled-components"
+import { NavLink } from 'react-router-dom'
+import styled, { css } from 'styled-components'
 
 export const Container = styled.div`
-    position: relative;
+  position: relative;
 
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    height: 100%;
-    width: 20%;
+  height: 100%;
+  width: 20%;
 
-    background-color: ${({theme}) => theme.COLORS.PRIMARY_DARK};
+  background-color: ${({ theme }) => theme.COLORS.PRIMARY_DARK};
 
-    padding: 15px;
+  padding: 15px;
 
-    gap: 20px;
+  gap: 20px;
 `
 
 export const LogoContainer = styled.div`
-    display: flex;
+  display: flex;
 
-    align-items: center;
-    justify-content: center;
+  align-items: center;
+  justify-content: center;
 `
 
 export const LogoImg = styled.img`
-    width: 90px;
+  width: 90px;
 `
 
 export const LogoText = styled.h1`
-    ${({theme}) => css`
-        color: ${theme.COLORS.NEUTRAL_0};
-        font-size: ${theme.FONT_SIZE.XLARGE}px;
-        font-weight: ${theme.FONT_WEIGHT.NORMAL};
-    `}
+  ${({ theme }) => css`
+    color: ${theme.COLORS.NEUTRAL_0};
+    font-size: ${theme.FONT_SIZE.XLARGE}px;
+    font-weight: ${theme.FONT_WEIGHT.NORMAL};
+  `}
 `
 
 export const MenuOption = styled(NavLink)`
-    position: relative;
+  position: relative;
 
-    display: flex;
+  display: flex;
 
-    align-items: center;
+  align-items: center;
 
-    width: 100%;
-    height: 50px;
-    border-radius: 10px;
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
 
-    color: ${({theme}) => theme.COLORS.NEUTRAL_0};
-    font-size: ${({theme}) => theme.FONT_SIZE.LARGE}px;
+  color: ${({ theme }) => theme.COLORS.NEUTRAL_0};
+  font-size: ${({ theme }) => theme.FONT_SIZE.LARGE}px;
 
-    padding: 15px;
-    gap: 10px;
+  padding: 15px;
+  gap: 10px;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    transition: 0.5s;
+  transition: 0.5s;
 
-    &:hover {
-        background-color: ${({theme}) => theme.COLORS.PRIMARY_LIGHT};
-    }
+  &:hover {
+    background-color: ${({ theme }) => theme.COLORS.PRIMARY_LIGHT};
+  }
 `
 
 export const MenuOptionText = styled.p`
-    ${({theme}) => css`
-        color: ${theme.COLORS.NEUTRAL_0};
-        font-size: ${theme.FONT_SIZE.LARGE}px;
-    `}
+  ${({ theme }) => css`
+    color: ${theme.COLORS.NEUTRAL_0};
+    font-size: ${theme.FONT_SIZE.LARGE}px;
+  `}
 `

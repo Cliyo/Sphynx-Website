@@ -10,8 +10,28 @@ import {
 
 import Logo from 'assets/logo.png'
 import { routes } from 'constants/routes'
+import { useAlert } from 'hooks/useAlert'
+import { useAuth } from 'hooks/useAuth'
+import { useNavigate } from 'react-router-dom'
 
 export const NavigationBar = () => {
+  const { alert } = useAlert()
+  const { signOut } = useAuth()
+  const navigate = useNavigate()
+
+  const onConfirmLogout = () => {
+    signOut()
+    navigate('/auth/login')
+  }
+
+  const handleLogout = () => {
+    alert({
+      title: 'Sair',
+      message: 'Deseja realmente sair?',
+      onConfirm: onConfirmLogout,
+    })
+  }
+
   return (
     <Container>
       <LogoContainer>
@@ -25,6 +45,11 @@ export const NavigationBar = () => {
           <MenuOptionText> {route.name} </MenuOptionText>
         </MenuOption>
       ))}
+
+      <div onClick={handleLogout}>
+        <Icon color={'NEUTRAL_0'} size="20" name={'IoExit'} />
+        <MenuOptionText> Sair </MenuOptionText>
+      </div>
     </Container>
   )
 }

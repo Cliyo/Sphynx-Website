@@ -32,13 +32,12 @@ export const Login = () => {
     formState: { errors },
   } = useForm<LoginFormData>({
     defaultValues: {
-      email: '',
+      user: '',
       password: '',
     },
   })
 
   const onSubmit = async (data: LoginFormData) => {
-    console.log('enviou: ', data)
     await fetchLogin(data)
   }
 
@@ -52,7 +51,7 @@ export const Login = () => {
           <FormTitle> Login </FormTitle>
           <Controller
             control={control}
-            name="email"
+            name="user"
             rules={{
               required: t('inputErrors.required'),
               pattern: {
@@ -66,7 +65,7 @@ export const Login = () => {
                 onChange={onChange}
                 placeholder={t('placeholder.default')}
                 label={t('inputLabel.email')}
-                errorMessage={errors.email?.message}
+                errorMessage={errors.user?.message}
               />
             )}
           />

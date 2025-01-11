@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import { app } from 'services/axios'
+import { api } from 'services/axios'
 
 import { CustomerItemDTO, CustomerTableDataDTO } from 'dtos/CustomerDTO'
 import { CreateCustomerFormData } from 'pages/CustomersCreate/types'
@@ -14,13 +14,13 @@ export const useCustomer = () => {
   >([])
 
   const fetchCreateCustomer = async (data: CreateCustomerFormData) => {
-    await app.post('/consumers', data)
+    await api.post('/consumers', data)
 
     navigate('/customers')
   }
 
   const fetchGetAllCustomers = useCallback(async () => {
-    const request = await app.get('/consumers')
+    const request = await api.get('/consumers')
     const data = request.data as CustomerItemDTO[]
 
     const dataFormatted = data.map((customer) => {
@@ -37,12 +37,12 @@ export const useCustomer = () => {
   }, [])
 
   const fetchGetCustomerById = useCallback(async (id: string) => {
-    const request = await app.get(`/consumers/${id}`)
+    const request = await api.get(`/consumers/${id}`)
     return request.data as CustomerItemDTO
   }, [])
 
   const fetchDeleteCustomerById = async (id: string) => {
-    await app.delete(`/consumers/${id}`)
+    await api.delete(`/consumers/${id}`)
 
     navigate('/customers')
   }

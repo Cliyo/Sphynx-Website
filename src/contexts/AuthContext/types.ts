@@ -1,14 +1,12 @@
+import { UserDTO } from 'dtos/SignInDTO'
+import { LoginFormData } from 'pages/Login/types'
+
 export type AuthContextDataProps = {
-  // eslint-disable-next-line no-use-before-define
-  user: User
+  user: UserDTO
+  fetchLogin: (data: LoginFormData) => Promise<void>
+  signOut: () => void
 }
 
 export type AuthContextProviderProps = {
   children: React.ReactNode
-}
-
-export type User = {
-  name: string
-  email: string
-  isAuthenticated: boolean
 }

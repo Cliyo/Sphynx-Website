@@ -31,9 +31,4 @@ export const routes: MenuOptionProps[] = [
     name: 'Configurações',
     path: '/configs',
   },
-  {
-    iconName: 'IoExit',
-    name: 'Sair',
-    path: '/leave',
-  },
 ]

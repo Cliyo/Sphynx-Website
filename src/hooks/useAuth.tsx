@@ -1,19 +1,14 @@
-import { useNavigate } from 'react-router-dom'
-
-import { app } from 'services/axios'
-
-import { LoginFormData } from 'pages/Login/types'
+import { AuthContext } from 'contexts/AuthContext'
+import { useContext } from 'react'
 
 export const useAuth = () => {
-  const navigate = useNavigate()
+  const context = useContext(AuthContext)
 
-  const fetchLogin = async (data: LoginFormData) => {
-    await app.post('/login', data)
-
-    navigate('/dashboard')
+  if (!context) {
+    throw new Error(
+      'useAuthentication must be used within an AuthContextProvider',
+    )
   }
 
-  return {
-    fetchLogin,
-  }
+  return context
 }

@@ -1,4 +1,4 @@
-import { useAuthentication } from 'contexts/AuthContext'
+import { useAuth } from 'hooks/useAuth'
 import { PrivateRouteProps } from './types'
 import { Navigate, useLocation } from 'react-router-dom'
 
@@ -7,7 +7,7 @@ export const PrivateRoute = (props: PrivateRouteProps) => {
 
   const location = useLocation()
 
-  const { user } = useAuthentication()
+  const { user } = useAuth()
   const { isAuthenticated } = user
 
   if (!isAuthenticated) {

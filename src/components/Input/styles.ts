@@ -1,5 +1,9 @@
 import styled, { css } from 'styled-components'
 
+type InputCampProps = {
+  hasError: boolean
+}
+
 export const Container = styled.div`
   position: relative;
 
@@ -18,10 +22,7 @@ export const Label = styled.p`
   `}
 `
 
-export const InputCamp = styled.input`
-  border: 10px;
-  border: 0;
-
+export const InputCamp = styled.input<InputCampProps>`
   width: 100%;
   height: 100%;
 
@@ -30,14 +31,24 @@ export const InputCamp = styled.input`
   padding: 15px;
 
   border-radius: 10px;
-  border: 0;
+  border: ${({ hasError, theme }) =>
+    hasError ? `1px solid ${theme.COLORS.PRIMARY_ERROR}` : `0px`};
 
   &:focus-visible {
     outline: none;
   }
 `
 
-export const ErrorMessage = styled.p`
+export const ErrorMessage = styled.div`
+  display: flex;
+
+  align-items: center;
+  justify-content: flex-start;
+
+  margin-top: 5px;
+
+  gap: 5px;
+
   ${({ theme }) => css`
     color: ${theme.COLORS.PRIMARY_ERROR};
     font-size: ${theme.FONT_SIZE.SMALL}px;

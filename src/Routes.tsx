@@ -1,6 +1,8 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 
 import { NavigationBar } from 'components/NavigationBar'
+
+import { Login } from 'pages/Login'
 
 import { Customers } from 'pages/Customers'
 import { CustomersCreate } from 'pages/CustomersCreate'
@@ -12,22 +14,101 @@ import { Access } from 'pages/Access'
 import { Groups } from 'pages/Groups'
 import { GroupsCreate } from 'pages/GroupsCreate'
 
+import { useAuth } from 'hooks/useAuth'
+
+import { PrivateRoute } from 'components/PrivateRoute'
+
 export const RouteApp = () => {
+  const { user } = useAuth()
+
+  const { isAuthenticated } = user
+
   return (
     <BrowserRouter>
-      <NavigationBar />
+      {isAuthenticated && <NavigationBar />}
       <Routes>
-        <Route path="/customers" element={<Customers />} />
-        <Route path="/customers/new" element={<CustomersCreate />} />
-        <Route path="/customers/edit/:id" element={<CustomersCreate />} />
+        <Route
+          path="/"
+          element={
+            <Navigate to={isAuthenticated ? '/customers' : '/auth/login'} />
+          }
+        />
 
-        <Route path="/locals" element={<Locals />} />
+        <Route
+          path="/auth/login"
+          element={
+            isAuthenticated ? <Navigate to={'/customers'} replace /> : <Login />
+          }
+        />
 
-        <Route path="/access" element={<Access />} />
+        <Route
+          path="/customers"
+          element={
+            <PrivateRoute>
+              <Customers />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/customers/new"
+          element={
+            <PrivateRoute>
+              <CustomersCreate />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/customers/edit/:id"
+          element={
+            <PrivateRoute>
+              <CustomersCreate />
+            </PrivateRoute>
+          }
+        />
 
-        <Route path="/groups" element={<Groups />} />
-        <Route path="/groups/new" element={<GroupsCreate />} />
-        <Route path="/groups/edit/:id" element={<GroupsCreate />} />
+        <Route
+          path="/locals"
+          element={
+            <PrivateRoute>
+              <Locals />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/access"
+          element={
+            <PrivateRoute>
+              <Access />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/groups"
+          element={
+            <PrivateRoute>
+              <Groups />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/groups/new"
+          element={
+            <PrivateRoute>
+              <GroupsCreate />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/groups/edit/:id"
+          element={
+            <PrivateRoute>
+              <GroupsCreate />
+            </PrivateRoute>
+          }
+        />
+        <Route path="*" element={<div> 404 </div>} />
       </Routes>
     </BrowserRouter>
   )

@@ -8,8 +8,8 @@ import { Input } from 'components/Input'
 import { Table } from 'components/Table'
 import { Button } from 'components/Button'
 
-import { Container, InputsContainer, Title } from './styles'
 import { useGroup } from 'hooks/useGroup'
+import { Container, InputsContainer, NoRegisterText, Title } from './styles'
 
 export const Groups = () => {
   const { t } = useTranslation()
@@ -31,10 +31,14 @@ export const Groups = () => {
         </NavLink>
       </InputsContainer>
 
-      <Table
-        headers={groupsTableHeaders}
-        content={groupPageData.map((obj) => Object.values(obj))}
-      />
+      {groupPageData.length === 0 ? (
+        <NoRegisterText> {t('tableErrors.noData')} </NoRegisterText>
+      ) : (
+        <Table
+          headers={groupsTableHeaders}
+          content={groupPageData.map((obj) => Object.values(obj))}
+        />
+      )}
     </Container>
   )
 }

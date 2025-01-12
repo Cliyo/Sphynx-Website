@@ -62,6 +62,32 @@ export const MenuOption = styled(NavLink)`
   }
 `
 
+export const MenuLeaveOption = styled.div`
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+
+  color: ${({ theme }) => theme.COLORS.NEUTRAL_0};
+  font-size: ${({ theme }) => theme.FONT_SIZE.LARGE}px;
+
+  padding: 15px;
+  gap: 10px;
+
+  cursor: pointer;
+
+  transition: 0.5s;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.COLORS.PRIMARY_LIGHT};
+  }
+`
+
 export const MenuOptionText = styled.p`
   ${({ theme }) => css`
     color: ${theme.COLORS.NEUTRAL_0};

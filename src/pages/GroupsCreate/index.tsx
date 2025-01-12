@@ -112,6 +112,7 @@ export const GroupsCreate = () => {
             text={t('button.delete')}
             width={120}
             height={50}
+            isDanger={true}
           />
         )}
         <Button

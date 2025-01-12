@@ -58,7 +58,7 @@ export const MenuOption = styled(NavLink)`
   transition: 0.5s;
 
   &:hover {
-    background-color: ${({ theme }) => theme.COLORS.PRIMARY_LIGHT};
+    background-color: ${({ theme }) => theme.COLORS.PRIMARY_MAIN};
   }
 `
 
@@ -84,7 +84,7 @@ export const MenuLeaveOption = styled.div`
   transition: 0.5s;
 
   &:hover {
-    background-color: ${({ theme }) => theme.COLORS.PRIMARY_LIGHT};
+    background-color: ${({ theme }) => theme.COLORS.PRIMARY_MAIN};
   }
 `
 

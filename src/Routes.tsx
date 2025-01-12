@@ -17,6 +17,7 @@ import { GroupsCreate } from 'pages/GroupsCreate'
 import { useAuth } from 'hooks/useAuth'
 
 import { PrivateRoute } from 'components/PrivateRoute'
+import { NotFound } from 'pages/NotFound'
 
 export const RouteApp = () => {
   const { user } = useAuth()
@@ -108,7 +109,7 @@ export const RouteApp = () => {
             </PrivateRoute>
           }
         />
-        <Route path="*" element={<div> 404 </div>} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   )

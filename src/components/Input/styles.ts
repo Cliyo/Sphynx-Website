@@ -32,7 +32,7 @@ export const InputCamp = styled.input<InputCampProps>`
 
   border-radius: 10px;
   border: ${({ hasError, theme }) =>
-    hasError ? `1px solid ${theme.COLORS.PRIMARY_ERROR}` : `0px`};
+    hasError ? `1px solid ${theme.COLORS.ERROR_MAIN}` : `0px`};
 
   &:focus-visible {
     outline: none;
@@ -50,7 +50,7 @@ export const ErrorMessage = styled.div`
   gap: 5px;
 
   ${({ theme }) => css`
-    color: ${theme.COLORS.PRIMARY_ERROR};
+    color: ${theme.COLORS.ERROR_MAIN};
     font-size: ${theme.FONT_SIZE.SMALL}px;
   `}
 `

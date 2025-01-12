@@ -4,6 +4,7 @@ import {
   LogoContainer,
   LogoImg,
   LogoText,
+  MenuLeaveOption,
   MenuOption,
   MenuOptionText,
 } from './styles'
@@ -46,10 +47,10 @@ export const NavigationBar = () => {
         </MenuOption>
       ))}
 
-      <div onClick={handleLogout}>
+      <MenuLeaveOption onClick={handleLogout}>
         <Icon color={'NEUTRAL_0'} size="20" name={'IoExit'} />
         <MenuOptionText> Sair </MenuOptionText>
-      </div>
+      </MenuLeaveOption>
     </Container>
   )
 }

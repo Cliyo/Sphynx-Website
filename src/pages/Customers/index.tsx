@@ -10,7 +10,7 @@ import { Table } from 'components/Table'
 import { Input } from 'components/Input'
 import { Button } from 'components/Button'
 
-import { Container, InputsContainer, Title } from './styles'
+import { Container, InputsContainer, NoRegisterText, Title } from './styles'
 
 export const Customers = () => {
   const { t } = useTranslation()
@@ -31,10 +31,15 @@ export const Customers = () => {
           <Button text={t('button.create')} width={90} />
         </NavLink>
       </InputsContainer>
-      <Table
-        headers={customersTableHeaders}
-        content={customerTableData.map((obj) => Object.values(obj))}
-      />
+
+      {customerTableData.length === 0 ? (
+        <NoRegisterText> {t('tableErrors.noData')} </NoRegisterText>
+      ) : (
+        <Table
+          headers={customersTableHeaders}
+          content={customerTableData.map((obj) => Object.values(obj))}
+        />
+      )}
     </Container>
   )
 }

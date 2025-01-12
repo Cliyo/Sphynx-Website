@@ -20,7 +20,7 @@ export const BodyItem = styled.div`
   align-items: center;
   justify-content: center;
 
-  font-weight: ${({ theme }) => theme.FONT_WEIGHT.BOLD};
+  font-weight: ${({ theme }) => theme.FONT_WEIGHT.NORMAL};
   color: ${({ theme }) => theme.COLORS.NEUTRAL_900};
 
   text-align: center;

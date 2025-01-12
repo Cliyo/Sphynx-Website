@@ -1,7 +1,7 @@
 export const theme = {
   COLORS: {
     PRIMARY_DARK: '#003845',
-    PRIMARY_LIGHT: '#009ABD',
+    PRIMARY_MAIN: '#009ABD',
     NEUTRAL_0: '#FAFAFA',
     NEUTRAL_200: '#EEEEEE',
     NEUTRAL_300: '#D2D2D2',
@@ -9,7 +9,8 @@ export const theme = {
     NEUTRAL_700: '#232323',
     NEUTRAL_900: '#1C1C1C',
 
-    PRIMARY_ERROR: '#FF0000',
+    ERROR_MAIN: '#FF0000',
+    ERROR_LIGHT: '#ff7a7a',
   },
   FONT_SIZE: {
     XSMALL: 6,

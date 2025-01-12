@@ -58,7 +58,33 @@ export const MenuOption = styled(NavLink)`
   transition: 0.5s;
 
   &:hover {
-    background-color: ${({ theme }) => theme.COLORS.PRIMARY_LIGHT};
+    background-color: ${({ theme }) => theme.COLORS.PRIMARY_MAIN};
+  }
+`
+
+export const MenuLeaveOption = styled.div`
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+
+  color: ${({ theme }) => theme.COLORS.NEUTRAL_0};
+  font-size: ${({ theme }) => theme.FONT_SIZE.LARGE}px;
+
+  padding: 15px;
+  gap: 10px;
+
+  cursor: pointer;
+
+  transition: 0.5s;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.COLORS.PRIMARY_MAIN};
   }
 `
 

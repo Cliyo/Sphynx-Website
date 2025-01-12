@@ -38,7 +38,7 @@ export const ContainerForm = styled.div`
 export const FormTitle = styled.h1`
   ${({ theme }) => css`
     font-size: ${theme.FONT_SIZE.XXLARGE}px;
-    color: ${theme.COLORS.PRIMARY_LIGHT};
+    color: ${theme.COLORS.PRIMARY_MAIN};
     font-weight: ${theme.FONT_WEIGHT.BOLD};
   `}
 `

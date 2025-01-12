@@ -47,7 +47,7 @@ export const SelectOption = styled.option`
 
 export const ErrorMessage = styled.p`
   ${({ theme }) => css`
-    color: ${theme.COLORS.PRIMARY_ERROR};
+    color: ${theme.COLORS.ERROR_MAIN};
     font-size: ${theme.FONT_SIZE.SMALL}px;
   `}
 `

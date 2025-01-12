@@ -9,8 +9,8 @@ export const theme = {
     NEUTRAL_700: '#232323',
     NEUTRAL_900: '#1C1C1C',
 
-    PRIMARY_ERROR: '#FF0000',
-    PRIMARY_ERROR_LIGHT: '#ff7a7a',
+    ERROR_MAIN: '#FF0000',
+    ERROR_LIGHT: '#ff7a7a',
   },
   FONT_SIZE: {
     XSMALL: 6,

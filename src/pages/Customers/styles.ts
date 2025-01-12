@@ -36,5 +36,5 @@ export const NoRegisterText = styled.p`
   margin-top: 20px;
 
   font-size: ${({ theme }) => theme.FONT_SIZE.SMALL};
-  color: ${({ theme }) => theme.COLORS.PRIMARY_ERROR};
+  color: ${({ theme }) => theme.COLORS.ERROR_MAIN};
 `

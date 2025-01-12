@@ -17,7 +17,7 @@ export const Input = (props: InputProps) => {
       />
       {errorMessage && (
         <ErrorMessage>
-          <Icon color="PRIMARY_ERROR" name="IoAlertCircleSharp" size="10" />
+          <Icon color="ERROR_MAIN" name="IoAlertCircleSharp" size="10" />
           {errorMessage}
         </ErrorMessage>
       )}

@@ -15,7 +15,7 @@ export const Container = styled.button<ContainerProps>`
 
   color: ${({ theme }) => theme.COLORS.NEUTRAL_0};
   background-color: ${({ isDanger, theme }) =>
-    isDanger ? theme.COLORS.PRIMARY_ERROR : theme.COLORS.PRIMARY_DARK};
+    isDanger ? theme.COLORS.ERROR_MAIN : theme.COLORS.PRIMARY_DARK};
 
   cursor: pointer;
 
@@ -23,6 +23,6 @@ export const Container = styled.button<ContainerProps>`
 
   &:hover {
     background-color: ${({ isDanger, theme }) =>
-      isDanger ? theme.COLORS.PRIMARY_ERROR_LIGHT : theme.COLORS.PRIMARY_MAIN};
+      isDanger ? theme.COLORS.ERROR_LIGHT : theme.COLORS.PRIMARY_MAIN};
   }
 `

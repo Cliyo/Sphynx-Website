@@ -10,13 +10,15 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
 
-  padding: 20px 40px;
+  padding: 20px 60px;
+
+  gap: 15px;
 `
 
 export const Title = styled.h1`
   ${({ theme }) => css`
     font-size: ${theme.FONT_SIZE.XXLARGE}px;
-    color: ${theme.COLORS.PRIMARY_LIGHT};
+    color: ${theme.COLORS.PRIMARY_DARK};
     font-weight: ${theme.FONT_WEIGHT.BOLD};
   `}
 `

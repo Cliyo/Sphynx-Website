@@ -2,13 +2,16 @@ import { Container } from './styles'
 import { ButtonProps } from './types'
 
 export const Button = (props: ButtonProps) => {
+  const { text, isDanger, height, onClick, width } = props
+
   return (
     <Container
-      width={props.width ? props.width : 0}
-      height={props.height ? props.height : 0}
-      onClick={props.onClick}
+      width={width || 0}
+      height={height || 0}
+      onClick={onClick}
+      isDanger={isDanger || false}
     >
-      {props.text}
+      {text}
     </Container>
   )
 }
